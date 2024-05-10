@@ -83,7 +83,7 @@ int main(void)
     // Calculate the Coleman-Liau index
     int index = calculate_index(letters, words, sentences);
 
-    // Print the grade level
+    // Print the grade levelwo 
     print_grade(index);
 
     return 0;

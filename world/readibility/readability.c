@@ -9,12 +9,12 @@ int main(void)
     printf("Text: ");
     fgets(text, sizeof(text), stdin);
 
-    int letters = 0, words = 1, sentences = 0;
+    int letters = 0, words = 0, sentences = 0;
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
             letters++;
-        if (isspace(text[i]))
+        if ((i == 0 && isalpha(text[i])) || (i != len - 1 && isalpha(text[i]) && isspace(text[i + 1])))
             words++;
         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
             sentences++;
@@ -31,5 +31,4 @@ int main(void)
     else
         printf("Grade %d\n", index);
 
- 
 }

@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int main(void) {
-    string s = get_string("Input: ");
-    printf("Output: %s\n", s);
-    return 0;
+    string name = get_string("What is your name? ");
+    printf("Hello, %s\n", name);
 }

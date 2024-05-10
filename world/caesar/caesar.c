@@ -1,46 +1,52 @@
 #include <stdio.h>
-#include <cs50.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdlib.h>
 
-// Function to encrypt a plaintext message using Caesar cipher
-string caesar_cipher(string plaintext, int key)
+void encrypt(char *text, int key);
+
+int main(int argc, char *argv[])
 {
-    string ciphertext = plaintext;
-
-    for (int i = 0, n = strlen(plaintext); i < n; i++)
-    {
-        if (isalpha(plaintext[i]))
-        {
-            char base = isupper(plaintext[i]) ? 'A' : 'a';
-            ciphertext[i] = (plaintext[i] - base + key) % 26 + base;
-        }
-    }
-
-    return ciphertext;
-}
-
-int main(int argc, string argv[])
-{
-    // Check if the user provided the correct number of command-line arguments
     if (argc != 2)
     {
-        printf("Usage: %s key\n", argv[0]);
+        printf("Usage: ./caesar key\n");
         return 1;
     }
 
-    // Convert the key from string to integer
-    int key = atoi(argv[1]);
+    for (int i = 0, len = strlen(argv[1]); i < len; i++)
+    {
+        if (!isdigit(argv[1][i]))
+        {
+            printf("Key must be a positive integer.\n");
+            return 1;
+        }
+    }
 
-    // Get the plaintext message from the user
-    string plaintext = get_string("plaintext: ");
+    int key = atoi(argv[1]) % 26;
+    char text[1000];
 
-    // Encrypt the plaintext message using Caesar cipher
-    string ciphertext = caesar_cipher(plaintext, key);
+    printf("plaintext: ");
+    fgets(text, sizeof(text), stdin);
 
-    // Output the ciphertext message
-    printf("ciphertext: %s\n", ciphertext);
+    printf("ciphertext: ");
+    encrypt(text, key);
 
     return 0;
+}
+
+void encrypt(char *text, int key)
+{
+    for (int i = 0, len = strlen(text); i < len; i++)
+    {
+        if (isalpha(text[i]))
+        {
+            char base = isupper(text[i]) ? 'A' : 'a';
+            printf("%c", (text[i] - base + key) % 26 + base);
+        }
+        else
+        {
+            printf("%c", text[i]);
+        }
+    }
+    printf("\n");
 }

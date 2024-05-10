@@ -16,11 +16,19 @@ int main(void) {
             printf(" ");
         }
 
-        // Print the hashes
+        // Print the first column of hashes
         for (int k = 0; k <= i; k++) {
             printf("#");
         }
 
-        printf("\n");
+        // Print the space between the columns
+        printf("  ");
+
+        // Print the second column of hashes
+        for (int k = 0; k <= i; k++) {
+            printf("#");
+        }
+
+              printf("\n");
     }
 }

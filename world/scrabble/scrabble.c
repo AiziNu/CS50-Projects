@@ -9,7 +9,7 @@ int calculate(string word){
 
     for(int i=0; word[i] != '\0'; i++){
         if(isalpha(word[i])){
-            score += letter_score[toupper(word[i])- "A"];
+            score += letter_score[toupper(word[i])-"A"];
         }
     }
     return score

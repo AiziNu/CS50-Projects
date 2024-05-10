@@ -9,10 +9,10 @@ int calculate(string word){
 
     for(int i=0; word[i] != '\0'; i++){
         if(isalpha(word[i])){
-            score += letter_score[toupper(word[i])-"A"];
+            score += letter_score[toupper(word[i]) - 'A'];
         }
     }
-    return score
+    return score;
 }
 
 
@@ -21,8 +21,8 @@ int main(void) {
 
     string word2 = get_string("Player 2: ");
 
-    int score1 = calculate_score(word1);
-    int score2 = calculate_score(word2);
+    int score1 = calculate(word1);
+    int score2 = calculate(word2);
 
     if (score1 > score2) {
         printf("Player 1 wins!\n");

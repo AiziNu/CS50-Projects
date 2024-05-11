@@ -6,6 +6,6 @@ sort2 uses:Merge sort
 
 How do you know?: Sort 2 shows varying performance across different scenarios, performing relatively better on reversed data compared to other scenarios. This behavior suggests that it might be using an algorithm optimized for reverse-ordered data, such as Merge Sort, which is known to perform well in such cases.
 
-sort3 uses: Selected sort
+sort3 uses: Selection sort
 
 How do you know?: Sort 3's performance suggests the characteristics of Selection Sort. Although not the most efficient algorithm, Selection Sort is straightforward and performs consistently across different input scenarios.

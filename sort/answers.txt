@@ -4,7 +4,7 @@ How do you know?: Sort 1's performance consistently aligns with the characterist
 
 sort2 uses: Selection Sort
 
-How do you know?: Sort 2 consistently outperforms the other programs across all scenarios, indicating that it likely employs a more efficient algorithm. Given the performance characteristics and efficiency, Program 2 is likely using Quick Sort, which is known for its high performance and efficiency in most cases.
+How do you know?: Sort 2's performance suggests the characteristics of Selection Sort. Although not the most efficient algorithm, Selection Sort is straightforward and performs consistently across different input scenarios.
 
 sort3 uses: Merge sort
 

@@ -2,7 +2,7 @@ sort1 uses: Selection Sort
 
 How do you know?: Sort 1 implements a sorting algorithm that consistently performs relatively better on already sorted text compared to other scenarios. This behavior suggests that it might be using an algorithm optimized for partially sorted data, such as Selection Sort, which has a better performance when dealing with nearly sorted inputs.
 
-sort2 uses: Bubble sort or Quick sort
+sort2 uses: Bubble sort
 
 How do you know?: Sort 2 consistently outperforms the other programs across all scenarios, indicating that it likely employs a more efficient algorithm. Given the performance characteristics and efficiency, Program 2 is likely using Quick Sort, which is known for its high performance and efficiency in most cases.
 

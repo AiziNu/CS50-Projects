@@ -33,7 +33,22 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]);
 
-    int16_t buffer;
+    uint8_t header[HEADER_SIZE];
+
+// Read header from input file and write to output file
+fread(header, sizeof(uint8_t), HEADER_SIZE, input);
+fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
+
+// Prepare to read 16-bit (2 byte) samples from the input file
+int16_t buffer;
+
+// Continue reading until there are no more samples
+while (fread(&buffer, sizeof(int16_t), 1, input))
+{
+    // Scale sample by factor and write to output file
+    buffer *= factor;
+    fwrite(&buffer, sizeof(int16_t), 1, output);
+}
 
 
 

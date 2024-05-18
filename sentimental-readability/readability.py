@@ -17,10 +17,10 @@ def calculate_readability():
     grade = round(0.0588 * L - 0.296 * S - 15.8)
 
     if grade < 1:
-    print("Before Grade 1")
+      print("Before Grade 1")
     elif grade >=16:
      print("Grade 16+")
-   else:
+    else:
      print(f"Grade {grade} ")
 
 calculate_readability()

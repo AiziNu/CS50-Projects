@@ -1,7 +1,10 @@
 import re
 
+def get_string(prompt):
+    return input(prompt)
 
-def calculate_readability(text):
+def calculate_readability():
+    text = get_string("Enter some text: ")
     letters = len(re.findall(r'\b\w\b', text))
 
     words = len(re.findall(r'\b\w+\b', text))

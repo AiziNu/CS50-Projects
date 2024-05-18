@@ -21,10 +21,7 @@ def calculate_readability():
     elif grade >=16:
      print("Grade 16+")
    else:
-     print("Grade", grade)
+     print(f"Grade {grade} ")
 
-def main():
-    text = input("Enter some text: ")
-    calculate_readability(text)
+calculate_readability()
 
-main()

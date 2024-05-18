@@ -1,10 +1,11 @@
-def get_int(prompt):
+def get_float(prompt):
     while True:
         try:
-            value = int(input(prompt))
-            if 1 <= value <= 8:
+            value = float(input(prompt))
+            if value >= 0
              return value
         except ValueError:
+            print("Invalid input. Please enter a non-negative number.")
             continue
 
 def draw_piramid():

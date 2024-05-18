@@ -4,7 +4,7 @@ def get_int(n):
     while True:
         try:
             value = int(input(n))
-            if 1 <= value <= 8
+            if 1 <= value <= 8:
             return value
         except ValueError:
             continue

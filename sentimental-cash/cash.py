@@ -14,7 +14,7 @@ def calculate_coins():
     cents = round(change * 100)
     quarters = 25
     dimes = 10
-    nickles = 5
+    nickels = 5
     pennies = 1
 
     num_coins = 0

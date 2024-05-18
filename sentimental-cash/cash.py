@@ -28,3 +28,4 @@ def calculate_coins():
 
     print(num_coins)
 calculate_coins()
+

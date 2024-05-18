@@ -32,3 +32,11 @@ def calculate_readability():
 
 calculate_readability()
 
+
+age = 20;
+can_drive = False
+
+is_age_valid = 18 <= age <=25
+
+if is_age_valid:
+    cannot_drive = 

@@ -5,7 +5,7 @@ def get_string(prompt):
 
 def calculate_readability():
     text = get_string("Enter some text: ")
-    letters = len(re.findall(r'\b\w\b', text))
+    letters = len(re.findall(r'[a-zA-Z]', text))
 
     words = len(re.findall(r'\b\w+\b', text))
 

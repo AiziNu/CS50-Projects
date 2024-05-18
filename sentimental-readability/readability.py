@@ -20,7 +20,8 @@ def calculate_readability():
     S = (sentences / words) * 100
 
     # Calculate the grade level using the Coleman-Liau formula
-    index = round(0.0588 * L - 0.296 * S - 15.8)
+    index = 0.0588 * L - 0.296 * S - 15.8
+    index = int(index) if index - int(index) < 0.5 else int(index) + 1
 
     # Print the grade level
     if index < 1:

@@ -39,4 +39,6 @@ can_drive = False
 is_age_valid = 18 <= age <=25
 
 if is_age_valid:
-    cannot_drive = 
+    cannot_drive = not can_drive
+else:
+    cannot_drive = can_drive

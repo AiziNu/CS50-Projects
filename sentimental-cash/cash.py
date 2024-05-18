@@ -27,3 +27,4 @@ def calculate_coins():
     num_coins += cents // pennies
 
     print(num_coins)
+calculate_coins()

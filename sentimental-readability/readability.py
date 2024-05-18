@@ -10,7 +10,7 @@ def calculate_readability():
     letters = len(re.findall(r'[a-zA-Z]', text))
 
     # Count the number of words
-    words = len(re.findall(r'\b\w+\b', text))
+    words = len(text.split())
 
     # Count the number of sentences
     sentences = text.count('.') + text.count('!') + text.count('?')
@@ -20,8 +20,7 @@ def calculate_readability():
     S = (sentences / words) * 100
 
     # Calculate the grade level using the Coleman-Liau formula
-    index = 0.0588 * L - 0.296 * S - 15.8
-    index = int(index) if index - int(index) < 0.5 else int(index) + 1
+    index = round(0.0588 * L - 0.296 * S - 15.8)
 
     # Print the grade level
     if index < 1:

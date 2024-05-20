@@ -1,0 +1,1 @@
+I used SQL to explore a Spotify dataset. I found song details and artist names. I sorted songs by tempo. This data can help Spotify suggest songs to users. I learned a lot about SQL and data analysis.

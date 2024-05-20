@@ -9,5 +9,5 @@ WHERE id IN(
         WHERE year = 2004
     )
 )
-AND birth IS NOT NULL
-ORDER BY birth;
+AND birth_year IS NOT NULL
+ORDER BY birth_year;

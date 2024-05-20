@@ -5,4 +5,7 @@ sqlite> .schema crime_scene_reports
 
 sqlite> SELECT *
 FROM crime_scene_reports
-WHERE date = 'YYYY-MM-DD' AND location = 'Crime Location';
+WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
+.schema interviews
+SELECT *
+FROM interviews;

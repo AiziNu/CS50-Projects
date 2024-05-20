@@ -1,1 +1,1 @@
-SELECT COUNT(*) FROM movies WHERE imdb_rating = 10.0;
+SELECT COUNT(*) FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE ratings.rating = 10.0;

@@ -5,7 +5,7 @@ WHERE id IN(
     FROM directors
     WHERE movie_id IN(
         SELECT id
-        FROM movie
-        
-    ) >=9.0
+        FROM movies
+        WHERE rating >=9.0
+    )
 );

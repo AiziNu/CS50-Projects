@@ -10,3 +10,4 @@ WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
 SELECT *
 FROM interviews;.tables
 
+SELECT * FROM interviews WHERE LOWER(transcript) LIKE '%bakery%';

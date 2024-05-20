@@ -1,11 +1,11 @@
 SELECT name
 FROM people
-WHERE id IN(
-    SELECT director_id
+WHERE id IN (
+    SELECT person_id
     FROM directors
-    WHERE movie_id IN(
+    WHERE movie_id IN (
         SELECT id
         FROM movies
-        WHERE rating >=9.0
+        WHERE rating >= 9.0
     )
 );

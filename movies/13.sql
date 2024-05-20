@@ -9,7 +9,7 @@ WHERE id IN (
         WHERE person_id = (
             SELECT id
             FROM people
-            WHERE name = 'Kevin Bacon' AND birth_year = 1958
+            WHERE name = 'Kevin Bacon' AND birth = 1958
         )
     )
 )

@@ -10,4 +10,4 @@ WHERE id IN (
     )
 )
 GROUP BY title
-HAVING COUNT(DISTINCT actor_id) = 2;
+HAVING COUNT(DISTINCT person_id) = 2;

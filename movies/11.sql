@@ -9,5 +9,9 @@ WHERE id IN(
         WHERE name = 'Chadwick Boseman'
     )
 )
-ORDER BY rating DESC
+ORDER BY(
+    SELECT rating
+    FROM ratings
+    WHERE movie_id = movies.id
+) DESC
 LIMIT 5;

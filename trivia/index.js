@@ -30,8 +30,13 @@ let feedback = document.getElementById("feedback2");
 
 // The correct answer
 let correctAnswer = ["3", "three"];
+inputField.addEventListener('input', function() {
+    // Reset input field color and feedback message when a new answer is entered
+    inputField.style.backgroundColor = '';
+    feedback.textContent = '';
+});
 
-// Add event listener to the button
+// Add click event listener to the button
 button.addEventListener('click', function() {
     // Check if the answer is correct
     if (correctAnswers.includes(inputField.value.toLowerCase())) {

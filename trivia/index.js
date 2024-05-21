@@ -23,5 +23,26 @@ buttons.forEach(button => {
     });
 });
 
+let inputField = document.querySelector('input');
+let button = document.getElementById("btn_check");
+let feedback = document.getElementById("feedback2");
 
 
+// The correct answer
+let correctAnswer = '3';
+
+// Add event listener to the button
+button.addEventListener('click', function() {
+    // Check if the answer is correct
+    if (inputField.value === correctAnswer) {
+        // If the answer is correct, change the input field color to green
+        inputField.style.backgroundColor = 'green';
+        // Display "Correct!" message
+        feedback.textContent = 'Correct!';
+    } else {
+        // If the answer is incorrect, change the input field color to red
+        inputField.style.backgroundColor = 'red';
+        // Display "Incorrect" message
+        feedback.textContent = 'Incorrect';
+    }
+});

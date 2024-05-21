@@ -1,1 +1,3 @@
-const buttons = document
+const buttons = document.querySelectorAll(.answer).forEach(button=>{
+    
+})

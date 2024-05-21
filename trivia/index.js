@@ -29,12 +29,12 @@ let feedback = document.getElementById("feedback2");
 
 
 // The correct answer
-let correctAnswer = '3';
+let correctAnswer = ["3", "three"];
 
 // Add event listener to the button
 button.addEventListener('click', function() {
     // Check if the answer is correct
-    if (inputField.value === correctAnswer) {
+    if (correctAnswers.includes(inputField.value.toLowerCase())) {
         // If the answer is correct, change the input field color to green
         inputField.style.backgroundColor = 'green';
         // Display "Correct!" message

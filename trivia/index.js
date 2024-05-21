@@ -1,5 +1,5 @@
 // Get all the buttons
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('.btn');
 
 buttons.forEach(button => {
     button.addEventListener('click', function() {

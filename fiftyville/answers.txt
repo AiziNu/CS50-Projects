@@ -45,3 +45,20 @@ Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Inte
 +-----------------+
 | 6099879058      |
 +-----------------+
+
++-----+----------------+------+-------+-----+----------------+------------------+--------+
+| id  | account_number | year | month | day |  atm_location  | transaction_type | amount |
++-----+----------------+------+-------+-----+----------------+------------------+--------+
+| 131 | 15452229       | 2023 | 7     | 27  | Leggett Street | deposit          | 75     |
+| 132 | 26017967       | 2023 | 7     | 27  | Leggett Street | withdraw         | 35     |
+| 162 | 36438351       | 2023 | 7     | 27  | Leggett Street | withdraw         | 25     |
+| 174 | 91814087       | 2023 | 7     | 27  | Leggett Street | withdraw         | 95     |
+| 191 | 38010758       | 2023 | 7     | 27  | Leggett Street | deposit          | 75     |
+| 210 | 97773635       | 2023 | 7     | 27  | Leggett Street | deposit          | 25     |
+| 211 | 32212020       | 2023 | 7     | 27  | Leggett Street | withdraw         | 55     |
+| 224 | 93622979       | 2023 | 7     | 27  | Leggett Street | withdraw         | 50     |
+| 229 | 44432923       | 2023 | 7     | 27  | Leggett Street | withdraw         | 20     |
+| 230 | 32747120       | 2023 | 7     | 27  | Leggett Street | withdraw         | 20     |
+| 243 | 24133830       | 2023 | 7     | 27  | Leggett Street | deposit          | 60     |
++-----+----------------+------+-------+-----+----------------+------------------+--------+
+sqlite> 

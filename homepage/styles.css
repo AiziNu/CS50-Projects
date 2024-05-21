@@ -6,6 +6,11 @@
 
 .navbar{
     display: flex;
+    text-align: center;
+    background-color: lightblue;
+    /* align-items: center; */
+
+}
 }
 .navbar > ul{
     display: flex;
@@ -15,4 +20,8 @@
     align-items: center;
    justify-content: space-between;
    padding: 0.5rem 1rem;
+}
+ul{
+    display: flex;
+    text-decoration: none;
 }

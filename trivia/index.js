@@ -1,9 +1,13 @@
 // Get all the buttons
-var buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('button');
 
-// Add event listener to each button
-buttons.forEach(function(button) {
+buttons.forEach(button => {
     button.addEventListener('click', function() {
+        // Reset color of all buttons to default
+        buttons.forEach(function(otherButton) {
+            otherButton.style.backgroundColor = ''; // Empty string sets it to default
+        });
+
         // Check if the answer is correct
         if (button.classList.contains('correct')) {
             // If the answer is correct, change the button color to green

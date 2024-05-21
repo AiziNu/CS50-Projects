@@ -1,10 +1,9 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
-    back
-}
+
 .navbar{
     display: flex;
 }
@@ -12,4 +11,5 @@ body{
     display: flex;
     text-decoration: none;
     text-align: center;
+    background-color: lightblue;
 }

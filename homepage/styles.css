@@ -1,0 +1,12 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+}
+.navbar > ul{
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+}

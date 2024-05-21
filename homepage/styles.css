@@ -4,24 +4,17 @@
     box-sizing: border-box;
 }
 
-.navbar{
+.navbar ul {
+    list-style-type: none;
     display: flex;
-    text-align: center;
-    background-color: lightblue;
-    /* align-items: center; */
+    justify-content: space-between;
+    width: 100%;
+}
 
-}
-}
-.navbar > ul{
-    display: flex;
-    text-decoration: none;
-    text-align: center;
-    background-color: lightblue;
-    align-items: center;
+.navbar li{
+   flex-grow: 1;
+   align-items: center;
    justify-content: space-between;
    padding: 0.5rem 1rem;
 }
-ul{
-    display: flex;
-    text-decoration: none;
-}
+

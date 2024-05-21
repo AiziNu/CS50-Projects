@@ -13,7 +13,7 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: transparent;
+    background-color: darkbrown;
     margin-right: auto;
     margin-left: auto;
 }
@@ -24,4 +24,7 @@
    justify-content: space-between;
    padding: 0.5rem 1rem;
 }
-
+main{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5wh9YMP1V4Da4oALxEMZCh1ibJKGf_7y5OQ&s);
+  background-repeat: no-repeat;
+}

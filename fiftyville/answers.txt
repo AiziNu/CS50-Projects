@@ -20,4 +20,18 @@ Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Inte
 +----------------+
 | account_number |
 +----------------+
-| 15911007    
+| 15911007
+
+
++------+----------------+------+-------+-----+----------------------+------------------+--------+
+|  id  | account_number | year | month | day |     atm_location     | transaction_type | amount |
++------+----------------+------+-------+-----+----------------------+------------------+--------+
+| 171  | 15911007       | 2023 | 7     | 27  | Carvalho Road        | deposit          | 45     |
+| 542  | 15911007       | 2023 | 7     | 29  | Daboin Sanchez Drive | withdraw         | 15     |
+| 878  | 15911007       | 2023 | 7     | 31  | Leggett Street       | deposit          | 90     |
+| 1007 | 15911007       | 2023 | 7     | 31  | Daboin Sanchez Drive | deposit          | 5      |
+| 1015 | 15911007       | 2023 | 7     | 31  | Carvalho Road        | withdraw         | 50     |
+| 1032 | 15911007       | 2023 | 7     | 31  | Humphrey Lane        | deposit          | 80     |
+| 1191 | 15911007       | 2023 | 8     | 1   | Carvalho Road        | withdraw         | 60     |
+| 1238 | 15911007       | 2023 | 8     | 1   | Humphrey Lane        | deposit          | 35     |
++------+----------------+------+-------+-----+----------------------+------------------+--------+

@@ -39,3 +39,9 @@ Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Inte
 |   id   | name  |  phone_number  | passport_number | license_plate |
 +--------+-------+----------------+-----------------+---------------+
 | 768035 | Diane | (147) 555-6818 | 6099879058      | WR2G758       |
+
++-----------------+
+| passport_number |
++-----------------+
+| 6099879058      |
++-----------------+

@@ -29,7 +29,7 @@ let feedback = document.getElementById("feedback2");
 
 
 // The correct answer
-let correctAnswer = ["3", "three"];
+let correctAnswers = ["3", "three"];
 inputField.addEventListener('input', function() {
     // Reset input field color and feedback message when a new answer is entered
     inputField.style.backgroundColor = '';

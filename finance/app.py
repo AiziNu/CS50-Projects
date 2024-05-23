@@ -35,7 +35,27 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+
+    user_id = session["user_id"]
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
+    holdings = []
+    total_value = 0
+
+    for stock in stocks:
+        quote = lookup(stock["symbol"])
+        total = quote["price"] * stock["total_shares"]
+        holdings.append({
+            "symbol": stock["symbol"],
+            "shares": stock["total_shares"],
+            "price": usd(quote["price"]),
+            "total": usd(total)
+        })
+        total_value += total
+
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+    total_value += cash
+
+    return render_template("index.html", holdings=holdings, cash=usd(cash), total=usd(total_value))
 
 
 @app.route("/buy", methods=["GET", "POST"])

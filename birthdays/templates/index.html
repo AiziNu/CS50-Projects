@@ -38,6 +38,12 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for name, month, day in birthdays %}
+                           <tr>
+                              <td>{{ name }}</td>
+                              <td>{{ month }}/{{ day }}</td>
+                           </tr>
+                     {% endfor %}
                     </tbody>
                 </table>
             </div>

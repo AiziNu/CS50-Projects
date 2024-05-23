@@ -142,7 +142,7 @@ def register():
         except ValueError:
             return apology("username already exists")
 
-        return redirect("/login")
+         return redirect("/login")
     else:
         return render_template("register.html")
 

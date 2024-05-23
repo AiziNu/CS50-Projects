@@ -186,7 +186,7 @@ def register():
         except ValueError:
             return apology("username already exists")
 
-         return redirect("/login")
+        return redirect("/login")
     else:
         return render_template("register.html")
 
@@ -194,7 +194,7 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-  user_id = session["user_id"]
+    user_id = session["user_id"]
 
     if request.method == "POST":
         symbol = request.form.get("symbol")

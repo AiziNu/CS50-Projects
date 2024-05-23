@@ -41,8 +41,33 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
-    return apology("TODO")
+   if request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
+        if not symbol:
+            return apology("must provide symbol")
+        if not shares or int(shares) <= 0:
+            return apology("must provide a positive number of shares")
+
+        stock = lookup(symbol)
+        if not stock:
+            return apology("invalid symbol")
+
+        shares = int(shares)
+        user_id = session["user_id"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        cost = shares * stock["price"]
+
+        if cash < cost:
+            return apology("can't afford")
+
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"])
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", cost, user_id)
+
+        return redirect("/")
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")
@@ -53,9 +78,7 @@ def history():
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login():
-    """Log user in"""
-
+def login()
     # Forget any user_id
     session.clear()
 

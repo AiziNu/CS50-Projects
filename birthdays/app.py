@@ -40,9 +40,17 @@ def index():
         return redirect("/")
 
     else:
+        # Query the database for all birthdays
+        conn = sqlite3.connect("birthdays.db")
+        db = conn.cursor()
+        db.execute("SELECT name, month, day FROM birthdays")
+        birthdays = db.fetchall()
+        conn.close()
 
-        # TODO: Display the entries in the database on index.html
+        # Render the template with the birthdays data
+        return render_template("index.html", birthdays=birthdays)
 
-        return render_template("index.html")
+if __name__ == "__main__":
+    app.run(debug=True)
 
 

@@ -25,7 +25,17 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-       
+         # Get data from form
+        name = request.form.get("name")
+        month = request.form.get("month")
+        day = request.form.get("day")
+
+        # Insert the new birthday into the database
+        conn = sqlite3.connect("birthdays.db")
+        db = conn.cursor()
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", (name, month, day))
+        conn.commit()
+        conn.close()
 
         return redirect("/")
 

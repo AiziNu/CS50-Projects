@@ -1,5 +1,4 @@
 import os
-
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -21,7 +20,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -30,12 +28,10 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-
 @app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
-
     user_id = session["user_id"]
     stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
     holdings = []
@@ -56,7 +52,6 @@ def index():
     total_value += cash
 
     return render_template("index.html", holdings=holdings, cash=usd(cash), total=usd(total_value))
-
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -92,13 +87,12 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-   user_id = session["user_id"]
+    user_id = session["user_id"]
     transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", user_id)
     return render_template("history.html", transactions=transactions)
 
-
 @app.route("/login", methods=["GET", "POST"])
-def login()
+def login():
     # Forget any user_id
     session.clear()
 
@@ -113,14 +107,10 @@ def login()
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
-        )
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(
-            rows[0]["hash"], request.form.get("password")
-        ):
+        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -133,17 +123,14 @@ def login()
     else:
         return render_template("login.html")
 
-
 @app.route("/logout")
 def logout():
     """Log user out"""
-
     # Forget any user_id
     session.clear()
 
     # Redirect user to login form
     return redirect("/")
-
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
@@ -162,11 +149,9 @@ def quote():
     else:
         return render_template("quote.html")
 
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
-   if request.method == "POST":
+    if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
@@ -188,7 +173,6 @@ def register():
         return redirect("/login")
     else:
         return render_template("register.html")
-
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required

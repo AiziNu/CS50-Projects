@@ -61,7 +61,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-   if request.method == "POST":
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
@@ -86,9 +86,8 @@ def buy():
         db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", cost, user_id)
 
         return redirect("/")
-   else:
+    else:
         return render_template("buy.html")
-
 
 @app.route("/history")
 @login_required

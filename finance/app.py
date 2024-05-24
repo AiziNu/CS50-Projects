@@ -86,8 +86,7 @@ def buy():
         db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", cost, user_id)
 
         return redirect("/")
-   
-    else:
+   else:
         return render_template("buy.html")
 
 

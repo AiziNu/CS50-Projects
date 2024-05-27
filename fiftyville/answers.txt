@@ -160,3 +160,30 @@ sqlite> SELECT * FROM airports;
 | 11 | SFO          | San Francisco International Airport     | San Francisco |
 | 12 | DEL          | Indira Gandhi International Airport     | Delhi         |
 +----+--------------+-----------------------------------------+---------------+
+
+sqlite> SELECT
+   ...>     f.*,
+   ...>     origin.full_name AS origin_airport,
+   ...>     destination.full_name AS destination_airport
+   ...> FROM
+   ...>     flights f
+   ...> JOIN
+   ...>     airports AS origin ON f.origin_airport_id = origin.id
+   ...> JOIN
+   ...>     airports AS destination ON f.destination_airport_id = destination.id
+   ...> WHERE
+   ...>     origin.id = 8
+   ...>     AND f.year = 2023
+   ...>     AND f.month = 7
+   ...>     AND f.day = 29
+   ...> ORDER BY
+   ...>     f.hour, f.minute;
++----+-------------------+------------------------+------+-------+-----+------+--------+-----------------------------+-------------------------------------+
+| id | origin_airport_id | destination_airport_id | year | month | day | hour | minute |       origin_airport        |         destination_airport         |
++----+-------------------+------------------------+------+-------+-----+------+--------+-----------------------------+-------------------------------------+
+| 36 | 8                 | 4                      | 2023 | 7     | 29  | 8    | 20     | Fiftyville Regional Airport | LaGuardia Airport                   |
+| 43 | 8                 | 1                      | 2023 | 7     | 29  | 9    | 30     | Fiftyville Regional Airport | O'Hare International Airport        |
+| 23 | 8                 | 11                     | 2023 | 7     | 29  | 12   | 15     | Fiftyville Regional Airport | San Francisco International Airport |
+| 53 | 8                 | 9                      | 2023 | 7     | 29  | 15   | 20     | Fiftyville Regional Airport | Tokyo International Airport         |
+| 18 | 8                 | 6                      | 2023 | 7     | 29  | 16   | 0      | Fiftyville Regional Airport | Logan International Airport         |
++----+-------------------+------------------------+------+-------+-----+------+--------+-----------------------------+-------------------------------------+

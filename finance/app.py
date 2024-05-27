@@ -205,7 +205,7 @@ def sell():
 
         if not symbol:
             return apology("must provide symbol")
-        elif not shares or not shares.isdigit() or int(shares) <= 0:
+        elif not shares or int(shares) <= 0:
             return apology("must provide a positive number of shares")
         else:
             shares= int(shares)

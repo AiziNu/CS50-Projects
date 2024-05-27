@@ -28,4 +28,5 @@ JOIN airports origin ON f.origin_airport_id = origin_id
 JOIN airports destination ON f.destination_airport_id = destination_id
 WHERE origin.id = 8 AND f.year = 2023 AND f.month = 7 AND f.day = 29 ORDER BY f.hour, f.minute;
 
---we have in
+--we have ainfo we need to combine all info
+

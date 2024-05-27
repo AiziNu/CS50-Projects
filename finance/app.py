@@ -71,7 +71,7 @@ def buy():
 
         price = quote["price"]
         total_cost = int(shares)*price
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id=session["user_id"])[0]["cash"]
+        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
         if cash < total_cost:
             return apology("can't afford")

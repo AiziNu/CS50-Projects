@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
 
 {% block main %}
-  <p>A share of {{ name }} ({{ symbol }}) costs {{ price }}.</p>
+  <p>A share of {{ quote['name'] }} ({{ quote['symbol'] }}) costs {{ quute['price'] | usd }}.</p>
 {% endblock %}

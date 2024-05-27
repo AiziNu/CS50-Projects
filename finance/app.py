@@ -151,12 +151,11 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    #forget all user_id
     session.clear()
+
     #User reahed Post method
     if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        confirmation = request.form.get("confirmation")
 
         #make sure that username is submitted username
         if not request.form.get("username"):
@@ -171,16 +170,25 @@ def register():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords do not match", 400)
 
-        hash = generate_password_hash(password)
+        #Query database for username
+        row = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        except ValueError:
-            return apology("username already exists")
+        #Check Username isnot exist
+        if len(row) != 0
+            return apology("username already exist", 400)
+        #insert new user to database
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
+        #Query for new user
+        row = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        return redirect("/login")
+        #Remember which user logged
+        seesion["user_id"] = row[0]["id"]
+        return redirect("/")
+    #for Get method
     else:
-        return render_template("register.html")
+        
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required

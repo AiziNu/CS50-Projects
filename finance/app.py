@@ -32,26 +32,26 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    user_id = session["user_id"]
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
-    holdings = []
-    total_value = 0
+    #Get Users stocks and shares
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
 
+    #Get users cash Balance
+    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+
+    #initialize total val
+    total_value = cash
+    grand_total = cash
+
+    #loop over stock and price
     for stock in stocks:
         quote = lookup(stock["symbol"])
-        total = quote["price"] * stock["total_shares"]
-        holdings.append({
-            "symbol": stock["symbol"],
-            "shares": stock["total_shares"],
-            "price": usd(quote["price"]),
-            "total": usd(total)
-        })
-        total_value += total
+        stock["name"] = quote["name"]
+        stock["price"] = quote["price"]
+        stock["value"] =  stock["price"] * stock["total_shares"]
+        total_value += stock["value"]
+        grand_total += stock["value"]
 
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
-    total_value += cash
-
-    return render_template("index.html", holdings=holdings, cash=usd(cash), total=usd(total_value))
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required

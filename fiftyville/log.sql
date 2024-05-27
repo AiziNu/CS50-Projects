@@ -21,3 +21,9 @@ SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND durat
 SELECT p.name, pc.caller, pc.receiver, pc.year, pc.month, pc.day, pc.duration FROM phone_calls pc JOIN people p ON pc.caller = p.phone_number WHERE pc.year = 2023 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 --airport to search fiftyville
 SELECT * FROM airports;
+--found id of fiftyville which is 8, now need to find flights
+SELECT f.*, origin.full_name AS origin_airport, destination.full_name AS destination_airport
+FROM flights f
+JOIN airports destination ON f.destination_airport_id = destination_id
+WHERE origin.id = 8 AND f.year = 2023 AND f.month = 7 AND f.day = 29 ORDER BY f.hour, f.minute;
+

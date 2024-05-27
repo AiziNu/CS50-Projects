@@ -225,15 +225,12 @@ def sell():
                     db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
                                total_sale=total_sale ,user_id= session["user_id"])
                     #add users table
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", user_id, symbol, -shares, price)
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=symbol, shares=-shares, price=price)
 
+                    flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}.")
+                    return redirect("/")
+        return apology("symbol not found")
 
-
-        price = stock["price"]
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", user_id, symbol, -shares, price)
-        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", shares * price, user_id)
-
-        return redirect("/")
+    #
     else:
-        stocks = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
         return render_template("sell.html", stocks=stocks)

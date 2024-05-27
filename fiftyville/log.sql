@@ -6,10 +6,8 @@ sqlite> .schema crime_scene_reports
 SELECT *
 FROM crime_scene_reports
 WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
-
+-- Check three witnesses
 SELECT * FROM interviews WHERE transcript LIKE '%bakery%';
+--Witness1 Ruth, bakery footage
+SELECT * FROM bakery_security_logs WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 10 AND 15;
 
-SELECT * FROM atm_transactions WHERE year = 2023 AND month = 7 AND day = 28;
-
-SELECT * FROM flights WHERE year = 2023 AND month = 7 AND day = 28;
-SELECT * FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE year = 2023 AND month = 7 AND day = 28);

@@ -5,19 +5,20 @@
     <thead>
       <tr>
         <th>Symbol</th>
+        <th>Name</th>
         <th>Shares</th>
         <th>Price</th>
-        <th>Total</th>
-        <th>Total</th>
+        <th>Total Value</th>
       </tr>
     </thead>
     <tbody>
-      {% for holding in holdings %}
+      {% for stock in stocks %}
       <tr>
-        <td>{{ holding.symbol }}</td>
-        <td>{{ holding.shares }}</td>
-        <td>{{ holding.price }}</td>
-        <td>{{ holding.total }}</td>
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.name }}</td>
+        <td>{{ stock.total_shares }}</td>
+        <td>{{ stock.price }}</td>
+        <td>{{ stock.price * stock.total_shares }}</td>
       </tr>
       {% endfor %}
       <tr>
@@ -26,7 +27,7 @@
       </tr>
       <tr>
         <td colspan="3">Total</td>
-        <td>{{ total }}</td>
+        <td>{{ total_value }}</td>
       </tr>
     </tbody>
   </table>

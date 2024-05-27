@@ -62,19 +62,19 @@ def buy():
 
         if not symbol:
             return apology("must provide symbol")
-        if not shares or int(shares) <= 0:
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive number of shares")
 
-        stock = lookup(symbol)
-        if not stock:
-            return apology("invalid symbol")
+        quote = lookup(symbol)
+        if quote is None:
+            return apology("Symbol not found")
 
-        shares = int(shares)
-        user_id = session["user_id"]
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        price = quote["price"]
+        total_cost = int(shares)*price
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id=session[user_id])[0]["cash"]
         cost = shares * stock["price"]
 
-        if cash < cost:
+        if cash < total_cost:
             return apology("can't afford")
 
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"])

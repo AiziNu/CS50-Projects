@@ -6,4 +6,9 @@
 
 This project is a digital version of the classic dice game, where players take turns rolling virtual dice to accumulate points and win the game. The game features an intuitive user interface and allows players to compete against each other or against the computer. Each file in the project contains specific functionalities such as game logic, user interface components, and event handling. Design choices were made to prioritize simplicity and accessibility, ensuring an enjoyable gaming experience for all players.
 
-#
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AiziNu/roll-dice-game-forcs50.git
+

@@ -57,7 +57,7 @@ def index():
 @login_required
 def buy():
     if request.method == "POST":
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
 
         if not symbol:

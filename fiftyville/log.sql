@@ -39,3 +39,9 @@ WHERE bls.year = 2023 AND bls.month = 7 AND bls.day = 28 AND bls.hour = 10 AND b
 AND at.atm_location = "Leggett Street" AND at.year = 2023 AND at.month = 7 AND at.day = 28 AND at.transaction_type = "withdraw"
 AND pc.year = 2023 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 
+--check who is in the flight
+SELECT p.name
+FROM people p
+JOIN passengers ps ON p.passport_number = ps.passport_number
+WHERE ps.flight_id = 36
+AND p.name IN ('Diana', 'Bruce')

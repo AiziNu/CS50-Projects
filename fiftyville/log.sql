@@ -12,4 +12,4 @@ SELECT * FROM interviews WHERE transcript LIKE '%bakery%';
 SELECT * FROM bakery_security_logs WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 10 AND 15;
 --license_plate 13FNH73
 --Witness2 Eugene, ATM transactions
-
+SELECT * FROM bakery_security_logs WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 10 AND 15;

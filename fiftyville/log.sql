@@ -18,4 +18,6 @@ SELECT a.*, p.name FROM atm_transactions a JOIN bank_accounts b ON a.account_num
 --Witness3 RAymond, phone calls
 SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
 --add names to call list
-SELECT p.name, pc.caller, pc.receiver, pc.year, pc.month, pc.day, pc.duration FROM phone_calls pc WHERE pc.year = 2023 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
+SELECT p.name, pc.caller, pc.receiver, pc.year, pc.month, pc.day, pc.duration FROM phone_calls pc JOIN people p ON pc.caller = p.phone_number WHERE pc.year = 2023 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
+--airport to search fiftyville
+SELECT * FROM airports;

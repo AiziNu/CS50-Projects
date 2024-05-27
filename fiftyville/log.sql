@@ -28,5 +28,14 @@ JOIN airports origin ON f.origin_airport_id = origin_id
 JOIN airports destination ON f.destination_airport_id = destination_id
 WHERE origin.id = 8 AND f.year = 2023 AND f.month = 7 AND f.day = 29 ORDER BY f.hour, f.minute;
 
---we have ainfo we need to combine all info
+--we have ainfo we need to combine all info together
+SELECT p.name
+FROM bakery_security_logs bls
+JOIN people p ON p.license_plate = bls.license_plate
+JOIN bank_accounts ba ON ba.person_id = p.id
+JOIN atm_transactions at ON at.account_number = ba.account_number
+JOIN phone_calls pc ON pc.caller = p.phone_number
+WHERE bls.year = 2023 AND bls.month = 7 AND bls.day = 28 AND bls.hour = 10 AND bls.minute BETWEEN 10 AND 15
+AND at.atm_location = "Leggett Street" AND at.year = 2023 AND at.month = 7 AND at.day = 28 AND at.transaction_type = "withdraw"
+AND pc.year = 2023 AND pc.month = 7 AND pc.day = 28;
 

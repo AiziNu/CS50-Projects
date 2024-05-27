@@ -196,24 +196,32 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    user_id = session["user_id"]
+    #Get user Stock
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
 
     if request.method == "POST":
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
 
         if not symbol:
             return apology("must provide symbol")
-        if shares <= 0:
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive number of shares")
+        else:
+            shares= int(shares)
 
-        stock = lookup(symbol)
-        if not stock:
-            return apology("invalid symbol")
+        for stock in stocks:
+            if stock["symbol"] == symbol:
+                if stock["total_shares"] < shares:
+                    return apology("not enough shares")
+                else:
+                    quote = lookup(symbol)
+                    if quote is None:
+                        return apology("symbol not found")
+                    price = quote["price"]
+                    total_sale = shares * price
 
-        user_shares = db.execute("SELECT SUM(shares) as total_shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["total_shares"]
-        if shares > user_shares:
-            return apology("too many shares")
+
 
         price = stock["price"]
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", user_id, symbol, -shares, price)

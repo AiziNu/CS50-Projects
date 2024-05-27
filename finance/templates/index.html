@@ -30,29 +30,4 @@
     </tbody>
   </table>
 {% endblock %}
-6. Sell
-Objective: Enable users to sell shares of a stock they own.
 
-Create sell.html:
-html
-Copy code
-<!-- templates/sell.html -->
-{% extends "layout.html" %}
-
-{% block main %}
-  <form action="/sell" method="post">
-    <div>
-      <label for="symbol">Symbol</label>
-      <select id="symbol" name="symbol">
-        {% for stock in stocks %}
-        <option value="{{ stock.symbol }}">{{ stock.symbol }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div>
-      <label for="shares">Shares</label>
-      <input type="number" id="shares" name="shares">
-    </div>
-    <button type="submit">Sell</button>
-  </form>
-{% endblock %}

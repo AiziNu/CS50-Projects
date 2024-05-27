@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -141,7 +142,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-  for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
         {
@@ -172,7 +173,7 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    / int min_votes = voter_count;
+    int min_votes = voter_count;
     for (int i = 0; i < candidate_count; i++)
     {
         if (!candidates[i].eliminated && candidates[i].votes < min_votes)

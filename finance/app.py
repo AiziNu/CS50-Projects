@@ -151,6 +151,8 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    session.clear()
+    #User reahed Post method
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")

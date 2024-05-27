@@ -37,5 +37,5 @@ JOIN atm_transactions at ON at.account_number = ba.account_number
 JOIN phone_calls pc ON pc.caller = p.phone_number
 WHERE bls.year = 2023 AND bls.month = 7 AND bls.day = 28 AND bls.hour = 10 AND bls.minute BETWEEN 10 AND 15
 AND at.atm_location = "Leggett Street" AND at.year = 2023 AND at.month = 7 AND at.day = 28 AND at.transaction_type = "withdraw"
-AND pc.year = 2023 AND pc.month = 7 AND pc.day = 28;
+AND pc.year = 2023 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 

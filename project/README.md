@@ -11,7 +11,7 @@ This project is a digital version of the classic dice game, where players take t
 1. Clone the repository:
    ```bash
    git clone https://github.com/AiziNu/roll-dice-game-forcs50.git
-
+   
 ## Features
 -Single-player and multiplayer modes
 -Customizable game settings (e.g., number of players, number of dice, target score)

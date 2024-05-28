@@ -30,3 +30,6 @@ This project is a digital version of the classic dice game, where players take t
 -Players take turns rolling the dice by clicking on the "Roll Dice" button.
 -The game calculates and displays the total score for each player after each roll.
 -The game continues until one player reaches the target score with is 20 or until a specified number of rounds is completed.
+
+## Screenshots
+

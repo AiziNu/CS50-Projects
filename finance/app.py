@@ -62,6 +62,7 @@ def index():
             stock["price"] = 0
             stock["value"] = 0
             print(f"Stock: {stock['symbol']} not found")
+     print(f"Total Value: {total_value}")
 
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value)
 

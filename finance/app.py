@@ -50,24 +50,39 @@ def index():
     grand_total = cash
 
     # loop over stock and price
+
     for stock in stocks:
         quote = lookup(stock["symbol"])
         if quote:
             stock["price"] = quote["price"]
             stock["value"] = stock["price"] * stock["total_shares"]
             total_value += stock["value"]
-            grand_total += stock["value"]
         else:
             stock["price"] = 0
             stock["value"] = 0
 
-    return render_template(
-        "index.html",
-        stocks=stocks,
-        cash=cash,
-        total_value=total_value,
-        grand_total=grand_total,
-    )
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value)
+
+
+
+    # for stock in stocks:
+    #     quote = lookup(stock["symbol"])
+    #     if quote:
+    #         stock["price"] = quote["price"]
+    #         stock["value"] = stock["price"] * stock["total_shares"]
+    #         total_value += stock["value"]
+    #         grand_total += stock["value"]
+    #     else:
+    #         stock["price"] = 0
+    #         stock["value"] = 0
+
+    # return render_template(
+    #     "index.html",
+    #     stocks=stocks,
+    #     cash=cash,
+    #     total_value=total_value,
+    #     grand_total=grand_total,
+    # )
 
 
 @app.route("/buy", methods=["GET", "POST"])

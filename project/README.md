@@ -32,4 +32,5 @@ This project is a digital version of the classic dice game, where players take t
 -The game continues until one player reaches the target score with is 20 or until a specified number of rounds is completed.
 
 ## Screenshots
-
+![Screenshot 1](Screen-shot-ending-game.png)
+![Screenshot 2](Screen-shot-ending-game.png)

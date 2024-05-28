@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 
-{% bloccode quoted.html
-    k main %}
-  <form action="{{url_for('quete')}}" method="post">
+{% block title %}
+    Quote
+{% endblock %}
+{% block main %}
+  <form action="{{url_for('quote')}}" method="post">
     <div>
       <label for="symbol">Symbol</label>
       <input type="text" id="symbol" name="symbol" placeholder="Symbol" >

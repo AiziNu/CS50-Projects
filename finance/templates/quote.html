@@ -3,7 +3,9 @@
 {% block title %}
     Quote
 {% endblock %}
+
 {% block main %}
+  <h2>Get Stock Quote</h2>
   <form action="{{url_for('quote')}}" method="post">
     <div>
       <label for="symbol">Symbol</label>
@@ -11,4 +13,8 @@
     </div>
     <button type="submit">Get Quote</button>
   </form>
+  {% if quote %}
+      <h3>{{quote['name'] }} ({{ quote['symbol'] }}) </h3>
+      <p>Price:{{ quote['price'] | usd }} </p>
+  {% endif %}
 {% endblock %}

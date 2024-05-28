@@ -113,7 +113,9 @@ def buy():
                 price=price,
             )
         except Exception as e:
+            print(f"Transaction failed: {e}")
             return apology("Transaction failed")
+
         # cash = db.execute(
         #     "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
         # )[0]["cash"]

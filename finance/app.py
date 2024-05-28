@@ -47,7 +47,8 @@ def index():
 
     # initialize total val
     total_value = cash
-    grand_total = cash
+    print(f"Cash: {cash}")
+
 
     # loop over stock and price
 
@@ -60,6 +61,7 @@ def index():
         else:
             stock["price"] = 0
             stock["value"] = 0
+            print(f"Stock: {stock['symbol']} not found")
 
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value)
 

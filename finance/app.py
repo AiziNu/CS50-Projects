@@ -227,7 +227,7 @@ def register():
         )
 
         # Remember which user logged
-        seesion["user_id"] = row[0]["id"]
+        session["user_id"] = row[0]["id"]
         return redirect("/")
     # for Get method
     else:

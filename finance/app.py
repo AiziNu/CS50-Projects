@@ -107,7 +107,7 @@ def buy():
             user_id=session["user_id"],
             symbol=symbol,
             shares=shares,
-            price=price,
+            price=price
         )
 
 

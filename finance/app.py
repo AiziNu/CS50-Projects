@@ -47,11 +47,10 @@ def index():
 
     # initialize total val
     total_value = cash
-    print(f"Cash: {cash}")
+    grand_total = cash
 
 
     # loop over stock and print
-
     for stock in stocks:
         quote = lookup(stock["symbol"])
         if quote:

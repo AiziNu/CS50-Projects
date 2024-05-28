@@ -57,6 +57,9 @@ def index():
             stock["value"] = stock["price"] * stock["total_shares"]
             total_value += stock["value"]
             grand_total += stock["value"]
+        else:
+            stock["price"] = 0
+            stock["value"] = 0
 
     return render_template(
         "index.html",

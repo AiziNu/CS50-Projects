@@ -1,3 +1,4 @@
 # create formula func
 
-def enst
+def einstein(mass_input):
+    

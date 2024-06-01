@@ -15,3 +15,4 @@ def main():
     result = convert(user_input)
     print(result)
 
+main()

@@ -1,18 +1,30 @@
 def main():
-    user_input = input("What time is it? ").strip().split(":")
+    time = input("What time is it? ").strip()
     print(user_input)
-    if convert(user_input):
-        
 
-def convert(time):
-    if 7.0 <= time <= 8.0:
+    hours = convert(time)
+
+
+    if 7.0 <= hours <= 8.0:
         print("breakfast time")
-    elif 12.0 <= time <= 13.0:
+    elif 12.0 <= hours <= 13.0:
         print("lunch time")
-    elif 18.0 <= time <= 19.0:
+    elif 18.0 <= hours <= 19.0:
         print("dinner time")
     else:
         return
+
+
+def convert(time):
+    hour, minute = time.split(":")
+
+    #converting hour and min to inegers
+    hour = int(hour)
+    minute = int(minute)
+
+    # Convert the time to a float representing hours
+    return (hour + minutes) / 60.0
+
 
 
 

@@ -1,6 +1,7 @@
 def main():
     time = input("What time is it? ").strip()
 
+    #create var to call our convert funct
     hours = convert(time)
 
 

@@ -1,10 +1,13 @@
-#initialize x var as a int user promt
-x = int(input('Expression: '))
 
-y = calculate(exp)
+def main():
+      # Prompt the user for an arithmetic expression
+    expression = input('Expression (x, y,z): ').strip()
 
+    # Split the expression into components
+    x, y, z = expression.split(" ")
 
+    # Convert x and z to integers
+    x = int(x)
+    y = int(y)
+    
 
-def calculate(user_exp):
-    if user_exp == "+":
-        

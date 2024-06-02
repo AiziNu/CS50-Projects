@@ -8,7 +8,7 @@ def main():
 
     # Convert x and z to integers
     x = int(x)
-    z = int(y)
+    z = int(z)
 
     # Perform the appropriate arithmetic operation
     if y == "+":
@@ -23,7 +23,7 @@ def main():
         print("Invalid operator")
         return
 
-    print(f"{result:1f}")
+    print(f"{result:.1f}")
 
 
 main()

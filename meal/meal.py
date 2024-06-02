@@ -1,7 +1,6 @@
 def main():
     time = input("What time is it? ").strip()
 
-    #create var to call our convert funct
     hours = convert(time)
 
 
@@ -23,7 +22,7 @@ def convert(time):
     minute = int(minute)
 
     # Convert the time to a float representing hours
-    return (hour + minute) / 60.0
+    return hour + minute / 60.0
 
 
 

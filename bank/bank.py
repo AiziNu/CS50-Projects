@@ -1,8 +1,8 @@
 # create var greeting with user prompt
-greeting = input("Please enter your greet. ").strip().split(" ")
+greeting = input("Please enter your greet. ").strip().lower()
 
 #create conditions
-if greeting[0].lower() == "hello":
+if greeting.startswith("hello"):
     print("$0")
-elif greeting[0].lower() == "h":
+elif greeting.startswith("h"):
     print("$20")

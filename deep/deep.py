@@ -2,7 +2,7 @@
 user_thought = input("Enter the aswer: ")
 
 # create conditions
-if user_thought == '42' or user_thought == ('forty two').capitalize() or user_thought == 'forty-two':
+if user_thought == '42' or user_thought.lower() == 'forty two' or user_thought.lower() == 'forty-two':
     print("Yes")
 else:
     print("No")

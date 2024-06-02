@@ -3,7 +3,7 @@ def main():
     print(user_input)
 
 def convert(time):
-    ...
+    
 
 
 if __name__ == "__main__":

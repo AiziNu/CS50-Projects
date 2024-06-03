@@ -7,4 +7,9 @@ def main():
 
 # create funct with converts to snake_case
 def convert_snakeCase(s):
-    string = s.split("")
+    new_string = ""
+    for i in s:
+        if (i.isupper()):
+            new_string += "*"+1
+        else:
+            new_string +=i

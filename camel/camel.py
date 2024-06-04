@@ -11,7 +11,7 @@ def convert_snakeCase(s):
     new_string = ""
     for i in s:
         if (i.isupper()):
-            new_string += "*" + 1
+            new_string +="*" + 1
         else:
             new_string +=i
     x = new_string.split("*")

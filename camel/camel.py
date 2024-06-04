@@ -7,13 +7,13 @@ def main():
 
 
 # create funct with converts to snake_case
-def convert_snakeCase(s):
+def convert_snakeCase(camel_case):
     new_string = ""
-    for char in s:
-        if (i.isupper()):
-            new_string +="*" + 1
+    for char in camel_case:
+        if char.isupper():
+            new_string +="_" + char.lower()
         else:
-            new_string +=i
+            new_string += char
     x = new_string.split("*")
     x.remove('')
     print(x)

@@ -3,7 +3,7 @@
 def main():
     user_input = input("Enter camelCase: ")
     snake_case = convert_snakeCase(user_input)
-    print(snake_case)
+    print("The corresponding variable name in snake case is:", snake_case)
 
 
 # create funct with converts to snake_case

@@ -9,7 +9,7 @@ def main():
 # create funct with converts to snake_case
 def convert_snakeCase(s):
     new_string = ""
-    for i in s:
+    for char in s:
         if (i.isupper()):
             new_string +="*" + 1
         else:

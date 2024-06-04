@@ -14,8 +14,7 @@ def convert_snakeCase(camel_case):
             new_string +="_" + char.lower()
         else:
             new_string += char
-    x = new_string.split("*")
-    x.remove('')
-    print(x)
+    return new_string
+
 
 main()

@@ -3,11 +3,11 @@ def main():
     accepted_coins = [5,10,25]  #accepted denomanation
 
     while amount_due > 0:
-        print(f"Amount Due: {amount_due} cents")
         coin = int(input("Insert Coin: "))
 
         if coin in accepted_coins:
             amount_due -= coin
+            print(f"Amount Due: {amount_due} cents")
         else:
             print(f"Amount Due: {amount_due} cents")
 

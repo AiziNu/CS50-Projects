@@ -1,10 +1,16 @@
 def main():
-    user_input = int(input("Insert coin: "))
+    amount_due = 50  # tottal amount of one bottle of coce
+    accepted_coins = [10,25,50]  #accepted denomanation
+
+    while amount_due > 0:
+        coin = int(input("Insert coin: ")
+
+        if coin 
 
 
 
 
-def input_amount(coins):
-    
-    change = 0
-    if coins >
+
+
+
+

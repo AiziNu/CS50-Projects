@@ -13,7 +13,7 @@ def main():
             print("Invalid coin. Insert 5, 10 or 25 cents")
 
     change_owed = -amount_due  # calculate change owed
-    print(f"Change Owed: {change_owed} cents")
+    print(f"Change Owed: {change_owed}")
 
 main()
 

@@ -13,6 +13,13 @@ def main():
         if x > y or y == "0":
             raise ValueError
 
-        percentage = 
+        percentage = (x/y)*100
+
+        if percentage <= 1:
+            print("E")
+        elif percentage >=99:
+            print("F")
+        else:
+            print(f"round")
 
 

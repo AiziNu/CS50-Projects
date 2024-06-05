@@ -9,5 +9,10 @@ def main():
         x = int(x)
         y = int(y)
 
+        #validate canditions
         if x > y or y == "0":
-            
+            raise ValueError
+
+        percentage = 
+
+

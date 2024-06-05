@@ -20,7 +20,7 @@ def main():
             #check if its inmenu or not , if its then need to update total_cost
             if user_item in menu:
                 total_cost += menu[user_item]
-                print(f"${total_cost:.2f}")
+                print(f"Total: ${total_cost:.2f}")
         except EOFError:
             print()  # To ensure the prompt moves to a new line after Ctrl-D
             break

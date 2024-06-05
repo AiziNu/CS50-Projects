@@ -26,4 +26,15 @@ def main():
 
       user_fruit = input("Fruit: ").strip().lower()
 
-      for
+      # Output the number of calories if the fruit is in the dictionary
+      if user_fruit in fruits:
+            print(f"Callories: {fruits[user_fruit]}")
+      else:
+            print("Fruit not found")
+
+main()
+
+
+
+
+

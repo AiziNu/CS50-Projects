@@ -8,7 +8,7 @@ def main():
 
         if coin in accepted_coins:
             amount_due -= coin
-            print(f"Amount Due: {amount_due}")
+            # print(f"Amount Due: {amount_due}")
         else:
             print("Invalid coin insert 5, 10 or 25 cents")
 

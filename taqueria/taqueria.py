@@ -25,6 +25,8 @@ def main():
             print()  # To ensure the prompt moves to a new line after Ctrl-D
             break
 
+main()
+
 
 
 

@@ -14,7 +14,7 @@ def convert_twttr(str_input):
             continue
         else:
             new_string += char
-            
+
     return new_string
 
 main()

@@ -1,4 +1,6 @@
-menu = {
+
+def main():
+    menu = {
     "Baja Taco": 4.25,
     "Burrito": 7.50,
     "Bowl": 8.50,
@@ -9,22 +11,22 @@ menu = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
+    total_cost = 0.0
 
-def main():
-    user_item = input("Item: ").strip().capitalize()
-    total = get_item(user_item)
-
-    total = 0
     while True:
-        
+        try:
+            user_item = input("Item: ").strip().capitalize()
+
+            #check if its inmenu or not , if its then need to update total_cost
+            if user_input in menu:
+                total_cost += menu[user_input]
+                
 
 
 
-def get_item(choose):
 
-    if choose in menu:
-        return menu[choose]
-    else:
-        pass
+
+
+
 
 

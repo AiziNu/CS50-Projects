@@ -9,7 +9,10 @@ def main():
 def is_valid(s):
     #we will loop through s
     for char in s:
-        if 2 <=len(s) <=6 and 
+        if 2 <=len(s)<=6 and s[char].endswith(int) and s[char].startswith(str):
+            return True
+        else: False
+        
 
 
 main()

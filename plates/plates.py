@@ -20,7 +20,7 @@ def is_valid(s):
     if not s.isalnum():
         return False
 
-    #Check s is finishing with num
+    #4Check s is finishing with num
     #Loop through s, if ther ius a num update found num to True
     found_num = False
     for char in s:
@@ -28,6 +28,15 @@ def is_valid(s):
             found_num = True
         elif found_num and char.isalpha():
             return False
+
+     # Rule 5: The first number used cannot be '0'
+     for char in s:
+        if char.isdigit():
+            if char == "0":
+                return False
+            break
+
+    return True
 
 
 

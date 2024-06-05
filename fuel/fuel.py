@@ -1,2 +1,2 @@
 def main():
-    e = input("")
+    e = input("Fraction: ")

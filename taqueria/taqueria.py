@@ -15,6 +15,6 @@ def main():
 
 
 
-def get_item():
-    while 
+def get_item(user_input):
+    for 
 

@@ -14,9 +14,7 @@ def main():
     change_owed = -amount_due  # calculate change owed
     print(f"Change Owed: {change_owed} cents")
 
-
-
-
+main()
 
 
 

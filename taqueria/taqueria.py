@@ -18,8 +18,8 @@ def main():
             user_item = input("Item: ").strip().capitalize()
 
             #check if its inmenu or not , if its then need to update total_cost
-            if user_input in menu:
-                total_cost += menu[user_input]
+            if user_item in menu:
+                total_cost += menu[user_item]
                 print(f"${total_cost:.2f}")
         except EOFError:
             print()  # To ensure the prompt moves to a new line after Ctrl-D

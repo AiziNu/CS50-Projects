@@ -13,7 +13,10 @@ def is_valid(s):
         return False
 
     #2. chech if plates starts with 2 letters
-    of 
+    if not (s[0].isalpha() and s[1].isalpha()):
+        return False
+
+    #3.
 
 
 

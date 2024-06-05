@@ -1,5 +1,4 @@
-def main():
-    menu = {
+menu = {
     "Baja Taco": 4.25,
     "Burrito": 7.50,
     "Bowl": 8.50,
@@ -10,6 +9,12 @@ def main():
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
-    while True:
-        try:
-            item = input("Item: ").strip().lower()
+
+def main():
+    x = get_item()
+
+
+
+def get_item():
+    while 
+

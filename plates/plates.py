@@ -21,12 +21,13 @@ def is_valid(s):
         return False
 
     #Check s is finishing with num
-    found_num = False
-
     #Loop through s, if ther ius a num update found num to True
+    found_num = False
     for char in s:
         if char.isdigit():
             found_num = True
+        elif found_num and char.isalpha():
+            return False
 
 
 

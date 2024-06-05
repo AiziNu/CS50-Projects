@@ -1,2 +1,2 @@
 def main():
-    e = i
+    e = input("")

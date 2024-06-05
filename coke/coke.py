@@ -5,4 +5,5 @@ def main():
 
 
 def input_amount(coins):
-    if coins 
+    coins = 50
+    if coins >

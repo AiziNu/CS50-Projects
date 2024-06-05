@@ -1,30 +1,30 @@
 def main():
     while True:
+        try:
+            #get prompt from user
+            fraction = input("Fraction: ")
 
-        #get prompt from user
-        fraction = input("Fraction: ")
+            x,y = fraction.split('/')
 
-        x,y = fraction.split('/')
+            x = int(x)
+            y = int(y)
 
-        x = int(x)
-        y = int(y)
+            #validate canditions
+            if x > y or y == "0":
+                raise ValueError
 
-        #validate canditions
-        if x > y or y == "0":
-            raise ValueError
+            percentage = (x/y)*100
 
-        percentage = (x/y)*100
-
-        if percentage <= 1:
-            print("E")
-        elif percentage >=99:
-            print("F")
-        else:
-            print(f"{round(percentage)}")
-        break
+            if percentage <= 1:
+                print("E")
+            elif percentage >=99:
+                print("F")
+            else:
+                print(f"{round(percentage)}%")
+            break
 
 
-    except (ValueError, ZeroDivisionError):
+        except (ValueError, ZeroDivisionError):
             # Prompt the user again if input is invalid
             pass
 

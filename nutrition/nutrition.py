@@ -30,7 +30,7 @@ def main():
       if user_fruit in fruits:
             print(f"Callories: {fruits[user_fruit]}")
       else:
-            print("Fruit not found")
+            return
 
 main()
 

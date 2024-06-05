@@ -16,7 +16,10 @@ def is_valid(s):
     if not (s[0].isalpha() and s[1].isalpha()):
         return False
 
-    #3.
+    #3.Check extra space or puctuations
+    if not s.isalnum():
+        return False
+    
 
 
 

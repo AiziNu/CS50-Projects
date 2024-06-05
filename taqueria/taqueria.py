@@ -15,8 +15,7 @@ def main():
 
     while True:
         try:
-            user_item = input("Item: ").strip().capitalize()
-
+            user_item = input("Item: ").strip().title
             #check if its inmenu or not , if its then need to update total_cost
             if user_item in menu:
                 total_cost += menu[user_item]

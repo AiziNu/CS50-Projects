@@ -9,7 +9,7 @@ def convert_twttr(str_input):
     new_string = ""
 
     for char in str_input:
-        print(c, end="")
+        print(char, end="")
 
 
 main()

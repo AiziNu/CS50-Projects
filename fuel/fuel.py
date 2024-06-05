@@ -1,2 +1,2 @@
 def main():
-    e = input("Fraction: ")
+    e = input("Fraction: ").strip().split("")

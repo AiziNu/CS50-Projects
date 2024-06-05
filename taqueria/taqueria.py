@@ -11,10 +11,20 @@ menu = {
 }
 
 def main():
-    x = get_item()
+    user_item = input("Item: ").strip().capitalize()
+    total = get_item(user_item)
+
+    total = 0
+    while True:
+        
 
 
 
-def get_item(user_input):
-    for 
+def get_item(choose):
+
+    if choose in menu:
+        return menu[choose]
+    else:
+        pass
+
 

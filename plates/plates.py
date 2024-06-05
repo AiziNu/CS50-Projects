@@ -7,7 +7,8 @@ def main():
 
 
 def is_valid(s):
-    
+    #we will loop through s
+    for char in s
 
 
 main()

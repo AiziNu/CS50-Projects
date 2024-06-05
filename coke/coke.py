@@ -9,7 +9,7 @@ def main():
         if coin in accepted_coins:
             amount_due -= coin
         else:
-            print("Invalid coin. Please insert a coin of 25, 10, or 5 cents.")
+            print(f"Amount Due: {amount_due} cents")
 
     change_owed = -amount_due  # calculate change owed
     print(f"Change Owed: {change_owed} cents")

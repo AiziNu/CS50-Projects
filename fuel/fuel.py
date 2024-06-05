@@ -20,6 +20,13 @@ def main():
         elif percentage >=99:
             print("F")
         else:
-            print(f"round")
+            print(f"{round(percentage)}")
+        break
 
+
+    except (ValueError, ZeroDivisionError):
+            # Prompt the user again if input is invalid
+            pass
+
+main()
 

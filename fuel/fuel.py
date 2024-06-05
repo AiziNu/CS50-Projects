@@ -8,3 +8,6 @@ def main():
 
         x = int(x)
         y = int(y)
+
+        if x > y or y == "0":
+            

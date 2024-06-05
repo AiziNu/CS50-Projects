@@ -19,7 +19,14 @@ def is_valid(s):
     #3.Check extra space or puctuations
     if not s.isalnum():
         return False
-    
+
+    #Check s is finishing with num
+    found_num = False
+
+    #Loop through s, if ther ius a num update found num to True
+    for char in s:
+        if char.isdigit():
+            found_num = True
 
 
 

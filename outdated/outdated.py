@@ -36,7 +36,7 @@ def main():
             month_number = get_month_number(month_name)
             if month_number:
                 formatted_date = f"{year}-{month_number:02d}-{int(day):02d}"
-                print(f"Formatted date: {formatted_date}")
+                print(f"{formatted_date}")
                 break
         elif len(date_parts) == 1:
             if validate_date(date_parts[0]):

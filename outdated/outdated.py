@@ -44,3 +44,5 @@ def main():
                 print(f"Formatted date: {formatted_date}")
                 break
         print("Invalid date format. Please try again.")
+
+main()

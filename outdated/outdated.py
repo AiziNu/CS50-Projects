@@ -29,20 +29,29 @@ def validate_date(date_str):
 
 def main():
     while True:
-        user_input = input("Enter a date (month-day-year or month day, year): ")
-        date_parts = user_input.split()
-        if len(date_parts) == 3:
-            month_name, day, year = date_parts
-            month_number = get_month_number(month_name)
-            if month_number:
-                formatted_date = f"{year}-{month_number:02d}-{int(day):02d}"
-                print(formatted_date)
-                break
-        elif len(date_parts) == 1:
-            if validate_date(date_parts[0]):
-                formatted_date = date_parts[0].replace("/", "-")
-                print(formatted_date)
-                break
-        print("Invalid date format. Please try again.")
+        user_input = input("Enter a date (MM/DD/YYYY or Month DD, YYYY): ")
 
+        # Handling "Month DD, YYYY" format
+        if "," in user_input:
+            try:
+                month_name, day_year = user_input.split(" ", 1)
+                day, year = day_year.split(", ")
+                day = int(day)
+                year = int(year)
+                month_number = get_month_number(month_name)
+                if month_number and 1 <= day <= 31:
+                    formatted_date = f"{year:04d}-{month_number:02d}-{day:02d}"
+                    print(formatted_date)
+                    break
+            except (ValueError, IndexError):
+                pass
+
+        # Handling "MM/DD/YYYY" format
+        elif validate_date(user_input):
+            month, day, year = map(int, user_input.split("/"))
+            formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
+            print(formatted_date)
+            break
+
+        print("Invalid date format. Please try again.")
 main()

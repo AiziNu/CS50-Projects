@@ -14,4 +14,9 @@ def main():
             print("Too small")
         elif guess > rand_guess
 
+def get_guess():
+    while True:
+        try:
+            guess = int(input("Guess: "))
+            if
 

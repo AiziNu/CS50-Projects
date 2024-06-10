@@ -25,11 +25,11 @@ def main():
             guess = int(input("Guess: "))
                 #check guess and print too low or too high
             if guess < rand_guess:
-                print("Too small")
+                print("Too small!")
             elif guess > rand_guess:
-                print("Too large")
+                print("Too large!")
             else:
-                print("Just right")
+                print("Just right!")
                 break
          except ValueError:
              print("Enter valid integer")

@@ -8,7 +8,7 @@ def main():
     args = sys.argv[1:]
 
     if len(args) not in [0, 2]:
-        sys.exit("Usage: figlet.py [-f | --font FONT]")
+        sys.exit("Invalid usage")
 
     font = None
     if len(args) == 2:

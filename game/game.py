@@ -8,7 +8,7 @@ def main():
     while True:
         try:
             n = int(input("Level: "))
-            if 1 <=n <=100:
+            if 1 <= n <=100:
                 break
             else:
                 print("Please enter number between 1 to 100")

@@ -30,3 +30,5 @@ def main():
     # Output the text in the desired font
     result = figlet.renderText(user_input)
     print(result)
+
+main()

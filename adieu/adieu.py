@@ -23,8 +23,8 @@ def main():
     if not names:
         sys.exit("No manes has entered")
 
-    formatted_name = p.join(names)
-    print(f"Adieu, adieu, to {formatted_name}")
+    formatted_names = p.join(names)
+    print(f"Adieu, adieu, to {formatted_names}")
 
 main()
 

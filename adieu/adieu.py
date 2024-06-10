@@ -21,7 +21,7 @@ def main():
 
     #Check at lear one name has entered
     if not names:
-        sys.exit("No manes has entered")
+        sys.exit("No manes has entered.")
 
     formatted_names = p.join(names)
     print(f"Adieu, adieu, to {formatted_names}")

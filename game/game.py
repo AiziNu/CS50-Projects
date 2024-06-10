@@ -20,15 +20,20 @@ def main():
 
     #loop continiusly until user get correct number
     while True:
-         guess = int(input("Guess: "))
-            #check guess and print too low or too high
-         if guess < rand_guess:
-              print("Too small")
-         elif guess > rand_guess:
-              print("Too large")
-         else:
-             print("Just right")
-             break
+
+         try:
+            guess = int(input("Guess: "))
+                #check guess and print too low or too high
+            if guess < rand_guess:
+                print("Too small")
+            elif guess > rand_guess:
+                print("Too large")
+            else:
+                print("Just right")
+                break
+         except ValueError:
+             print("Enter valid integer")
+
 main()
 
 

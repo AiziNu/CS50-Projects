@@ -30,6 +30,7 @@ def main():
                 print("Too large!")
             else:
                 print("Just right!")
+                sys.exit()
                 break
          except ValueError:
              print("Enter valid integer")

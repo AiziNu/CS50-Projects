@@ -38,7 +38,7 @@ def main():
 def get_level():
     while True:
         try:
-            level = int(input("Level: "))
+            level = input("Level: ")
             if level in ['1', '2', '3']:
                 return level
             else:

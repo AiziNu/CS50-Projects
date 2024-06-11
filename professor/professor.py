@@ -7,7 +7,7 @@ def main():
     level = get_level()
 
     #loop and create var X and Y
-    for i in range(10):
+    for _ in range(10):
         x = generate_integer(level)
         y = generate_integer(level)
         correct_answer = x + y
@@ -38,8 +38,8 @@ def main():
 def get_level():
     while True:
         try:
-            level = input("Level: ")
-            if level in ['1', '2', '3']:
+            level = int(input("Level: "))
+            if level in [1, 2, 3]:
                 return level
             else:
                 print("Invalid level. Please enter 1, 2, or 3.")
@@ -55,7 +55,7 @@ def generate_integer(level):
     elif level == '3':
         return random.randint(100,999)
     else:
-        raise ValueError("Enter correct level. It must be 1,2 or 3")
+        raise ValueError("Enter correct level. It must be 1, 2 or 3")
 
 
 main()

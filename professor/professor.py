@@ -23,8 +23,10 @@ def main():
                     break
                 else:
                     print("EEE")
+                    prompt_try += 1
             except ValueError:
                 print("EEE")
+                prompt_try += 1
 
         if prompt_try == 3:
             print(f"{x} + {y} = {correct_answer}")

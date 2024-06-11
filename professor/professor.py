@@ -31,7 +31,6 @@ def main():
 
         if prompt_try == 3:
             print(f"{x} + {y} = {correct_answer}")
-
     print(f'Score: {score}')
 
 

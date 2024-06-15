@@ -6,5 +6,6 @@ def main():
 
 def test_twttr():
     try:
-        
+        assert convert_twttr("TOMORROW") == "tmttw"
+        assert convert_twttr("TWitter") == "twttr"
 

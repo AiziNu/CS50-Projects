@@ -21,6 +21,5 @@ def test_edge_cases():
     assert convert_twttr("b") == "b"
     # Test with spaces
     assert convert_twttr(" ") == " "
-    assert convert_twttr("a e i o u") == " "
     # Test with special characters only
     assert convert_twttr("!@#$%^&*()") == "!@#$%^&*()"

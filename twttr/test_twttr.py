@@ -9,7 +9,7 @@ def test_only_vowels():
 def test_mixed_case():
     assert convert_twttr("hello") == "hll"
     assert convert_twttr("HELLO") == "HLL"
-    assert convert_twttr("hElLo") == "hLL"
+    assert convert_twttr("hElLo") == "hlL"
 
 def test_numbers_and_special_chars():
     assert convert_twttr("12345") == "12345"

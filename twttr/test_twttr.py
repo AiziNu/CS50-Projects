@@ -5,12 +5,12 @@ def main():
     test_twttr()
 
 def test_twttr():
-    assert convert_twttr("TOMORROW") == "tmttw"
-    assert convert_twttr("TWitter") == "twttr"
+    assert convert_twttr("TOMORROW") == "TMRRW"
+    assert convert_twttr("TWitter") == "TWttr"
     assert convert_twttr("hello") == "hll"
     assert convert_twttr("12345") == "12345"
-    assert convert_twttr("Symbol$%^") == "symbl$%^"
-    assert convert_twttr("Python 3.8") == "pythn 3.8^"
+    assert convert_twttr("Symbol$%^") == "Symbl$%^"
+    assert convert_twttr("Python 3.8") == "Pythn 3.8"
 
 
 def test_edge_cases():

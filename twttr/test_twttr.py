@@ -1,4 +1,4 @@
-import convert_twttr from twttr
+from twttr import convert_twttr
 
 
 def main():
@@ -7,3 +7,4 @@ def main():
 def test_twttr():
     try:
         
+

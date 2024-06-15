@@ -16,5 +16,8 @@ def test_shorten_sentence():
     sentence = "Hello, World!"
     expected = "Hll, Wrld!"
     assert shorten(sentence) == expected
+    
+def test_shorten_with_numbers():
+    assert shorten("CS50 2021") == "CS50 2021"
 
 

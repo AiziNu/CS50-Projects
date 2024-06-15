@@ -1,4 +1,5 @@
 from twttr import convert_twttr
+import pytest
 
 
 def main():
@@ -23,3 +24,7 @@ def test_edge_cases():
     assert convert_twttr(" ") == " "
     # Test with special characters only
     assert convert_twttr("!@#$%^&*()") == "!@#$%^&*()"
+
+    
+if __name__ == "__main__":
+    pytest.main()

@@ -21,7 +21,7 @@ def test_edge_cases():
     assert convert_twttr("A") == ""
     assert convert_twttr("b") == "b"
     assert convert_twttr(" ") == " "
-    assert convert_twttr("a e i o u") == ""
+    assert convert_twttr("a e i o u") == "    "
     assert convert_twttr("!@#$%^&*()") == "!@#$%^&*()"
 
 def test_mixed_content():

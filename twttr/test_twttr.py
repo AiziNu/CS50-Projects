@@ -1,6 +1,4 @@
 from twttr import convert_twttr
-import pytest
-
 
 def test_no_vowels():
     assert convert_twttr("bcdfghjklmnpqrstvwxyz") == "bcdfghjklmnpqrstvwxyz"
@@ -30,6 +28,6 @@ def test_mixed_content():
     assert convert_twttr("Python Programming is Fun!") == "Pythn Prgrmmng s Fn!"
     assert convert_twttr("Test 123!@#") == "Tst 123!@#"
 
-
 if __name__ == "__main__":
+    import pytest
     pytest.main()

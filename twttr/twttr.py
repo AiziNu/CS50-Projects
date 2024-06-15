@@ -17,4 +17,5 @@ def convert_twttr(str_input):
 
     return new_string
 
-main()
+if __name__ == "__main__":
+    main()

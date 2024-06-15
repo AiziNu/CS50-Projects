@@ -7,10 +7,10 @@ def main():
 
 def convert_twttr(str_input):
     new_string = ""
-    vowels = ["a","e", "i", "o", "u"]
+    vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
     for char in str_input:
-        if char.lower() in vowels:
+        if char in vowels:
             continue
         else:
             new_string += char

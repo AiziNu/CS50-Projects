@@ -14,22 +14,17 @@ def main():
 
 def convert(fraction):
     try:
-        x,y = fraction.split('/')
-
+        x, y = fraction.split("/")
         x = int(x)
         y = int(y)
-
-            #validate canditions
-        if x > y or y == "0":
+        if y == 0:
+            raise ZeroDivisionError
+        if x > y:
             raise ValueError
-
         return round((x / y) * 100)
-
-
     except ValueError:
-        raise ValueError("Invalid input")
-    except ZeroDivisionError:
-        raise ZeroDivisionError("Cannot divide by zero")
+        raise ValueError("Invalid fraction")
+
 
 
 

@@ -20,16 +20,20 @@ def is_valid(s):
     if not s.isalnum():
         return False
 
-     # Check if all characters after the first two are digits
-    for char in s[2:]:
-        if not char.isdigit():
+    #4Check s is finishing with num
+    #Loop through s, if ther ius a num update found num to True
+    found_num = False
+    for i in range(len(s)):
+        if s[i].isdigit():
+            found_num = True
+            # Rule 5: The first number used cannot be '0'
+            if i == 2 and s[i] == 0:
+                return False
+        elif found_num:
             return False
 
-    # Rule 5: The first number used cannot be '0'
-    if len(s) > 2 and s[2] == "0":
-        return False
-
     return True
+
 
 
 

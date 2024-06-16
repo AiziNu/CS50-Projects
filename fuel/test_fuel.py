@@ -1,21 +1,21 @@
 from fuel import convert, gauge
 import pytest
 
-def test_convert_valid():
-    assert convert("1/2") == 50
-    assert convert("3/4") == 75
-    assert convert("0/1") == 0
+def test_convert():
+    assert convert("2/3") == 67
 
-
-def test_convert_invalid():
-     with pytest.raises(ValueError):
+def test_non_digits():
+    with pytest.raises(ValueError):
         assert convert("cat/dog")
         assert convert("cat")
 
-def test_gauge():
-    assert gauge(1) == "E"
-    assert gauge(99) == "F"
-    assert gauge(50) == "50%"
+def test_zero_division():
+    with pytest.raises(ZeroDivisionError):
+        assert convert("0/0")
 
-if __name__ == "__main__":
-    pytest.main()
+def test_gauge():
+    assert gauge(99) == "F"
+    assert gauge(100) == "F"
+    assert gauge(0) == "E"
+    assert gauge(1) == "E"
+    assert gauge(45) == "45%"

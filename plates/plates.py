@@ -30,10 +30,10 @@ def is_valid(s):
             return False
 
      # Rule 5: The first number used cannot be '0'
-    # for char in s:
-    #     if char.isdigit():
-    #         if char == "0":
-    #             return False
+    for char in s:
+        if char.isdigit():
+            if char == "0":
+                return False
     #         break
     return True
 

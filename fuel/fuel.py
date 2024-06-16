@@ -1,14 +1,19 @@
 
 
 def main():
-    pass
+    fraction = input("Fraction: ")
+    try:
+        percentage = convert(fraction)
+        print(gauge(percentage))
+    except ValueError:
+        print("Invalid fraction")
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+
 
 
 def convert(fraction):
     try:
-        #get prompt from user
-        fraction = input("Fraction: ")
-
         x,y = fraction.split('/')
 
         x = int(x)

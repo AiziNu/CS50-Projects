@@ -19,6 +19,7 @@ def test_convert_invalid():
 
 def test_gauge():
     assert gauge(0) == "E"
-    assert gauge(20) == ""
-    assert gauge(50) == "F"
-    assert gauge(100) == ""
+    assert gauge(20) == "20%"
+    assert gauge(50) == "50%"
+    assert gauge(100) == "F"
+    assert gauge(99) == "F"

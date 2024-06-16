@@ -1,7 +1,7 @@
 
 
 def main():
-    ...
+    pass
 
 
 def convert(fraction):
@@ -21,9 +21,10 @@ def convert(fraction):
         return round((x / y) * 100)
 
 
-        except (ValueError, ZeroDivisionError):
-            # Prompt the user again if input is invalid
-            pass
+    except ValueError:
+        raise ValueError("Invalid input")
+    except ZeroDivisionError:
+        raise ZeroDivisionError("Cannot divide by zero")
 
 
 

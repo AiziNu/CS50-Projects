@@ -15,3 +15,6 @@ def test_is_valid_starts_alphabetical():
     assert is_valid("AB556") == True
     assert is_valid("1ab325") == False
     assert is_valid("!Abi25") == False
+
+def test_is_valid_all_letters():
+    assert is_valid("ABCDEF") == True

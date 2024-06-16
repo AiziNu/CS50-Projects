@@ -23,19 +23,15 @@ def is_valid(s):
     #4Check s is finishing with num
     #Loop through s, if ther ius a num update found num to True
     found_num = False
-    for char in s:
-        if char.isdigit():
+    for i in range(len(s)):
+        if s[i].isdigit():
             found_num = True
-        elif found_num and char.isalpha():
+            # Rule 5: The first number used cannot be '0'
+            if i == 2 and s[i] == "0":
+                return False
+        elif found_num:
             return False
 
-     # Rule 5: The first number used cannot be '0'
-    for char in s:
-        if char.isdigit():
-            if char == "0":
-                return False
-            break
-    return True
 
 
 

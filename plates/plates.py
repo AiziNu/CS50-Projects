@@ -31,6 +31,8 @@ def is_valid(s):
                 return False
         elif found_num:
             return False
+        
+    return True
 
 
 

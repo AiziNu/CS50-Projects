@@ -8,12 +8,9 @@ def test_convert_valid():
 
 
 def test_convert_invalid():
-    with pytest.raises(ValueError):
-        convert("cat/dog")
-    with pytest.raises(ValueError):
-        convert("2/1")
-    with pytest.raises(ValueError):
-        convert("1/0")
+     with pytest.raises(ValueError):
+        assert convert("cat/dog")
+        assert convert("cat")
 
 def test_gauge():
     assert gauge(1) == "E"

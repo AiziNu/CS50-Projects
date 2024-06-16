@@ -5,21 +5,20 @@ def main():
 
 
 def convert(fraction):
-    while True:
-        try:
-            #get prompt from user
-            fraction = input("Fraction: ")
+    try:
+        #get prompt from user
+        fraction = input("Fraction: ")
 
-            x,y = fraction.split('/')
+        x,y = fraction.split('/')
 
-            x = int(x)
-            y = int(y)
+        x = int(x)
+        y = int(y)
 
             #validate canditions
-            if x > y or y == "0":
-                raise ValueError
+        if x > y or y == "0":
+            raise ValueError
 
-            percentage = (x/y)*100
+        return round((x / y) * 100)
 
 
         except (ValueError, ZeroDivisionError):
@@ -34,8 +33,8 @@ def gauge(percentage):
      elif percentage >=99:
         return "F"
      else:
-        print(f"{round(percentage)}%")
-        break
+        return f"{percentage}%"
+
 
 
 

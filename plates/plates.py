@@ -34,7 +34,7 @@ def is_valid(s):
         if char.isdigit():
             if char == "0":
                 return False
-    #         break
+            break
     return True
 
 

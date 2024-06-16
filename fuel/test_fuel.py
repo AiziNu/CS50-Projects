@@ -1,7 +1,7 @@
 from fuel import convert, gauge
+import pytest
 
-
-def test_convert():
+def test_convert_valid():
     assert convert("1/2") == 50
     assert convert("3/4") == 75
     assert convert("0/1") == 0
@@ -18,8 +18,12 @@ def test_convert_invalid():
         convert("3/2")
 
 def test_gauge():
-     assert gauge(0) == "E"
-     assert gauge(20) == "20%"
-     assert gauge(50) == "50%"
-     assert gauge(100) == "F"
-     assert gauge(99) == "F"
+    assert gauge(0) == "E"
+    assert gauge(1) == "E"
+    assert gauge(99) == "F"
+    assert gauge(100) == "F"
+    assert gauge(50) == "50%"
+    assert gauge(75) == "75%"
+
+if __name__ == "__main__":
+    pytest.main()

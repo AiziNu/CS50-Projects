@@ -12,10 +12,12 @@ def test_is_valid_alphanumeric():
     assert is_valid("AB34!") == False
 
 def test_is_valid_starts_alphabetical():
-    assert is_valid("AB556") == True
-    assert is_valid("ABFGTR") == True
-    assert is_valid("1Ab325") == False
-    assert is_valid("0Abi25") == False
+    assert is_valid("AA") == True
+    assert is_valid("A2") == False
+
+    assert is_valid("2A") == False
+    assert is_valid("22") == False
+    assert is_valid(" 2") == False
 
 def test_is_valid_all_letters():
     assert is_valid("ABCDEF") == True

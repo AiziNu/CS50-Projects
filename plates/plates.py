@@ -23,11 +23,11 @@ def is_valid(s):
     #4Check s is finishing with num
     #Loop through s, if ther ius a num update found num to True
     found_num = False
-    for i in range(len(s)):
+    for i in range(2, len(s)):
         if s[i].isdigit():
             found_num = True
             # Rule 5: The first number used cannot be '0'
-            if i == 2 and s[i] == 0:
+            if i == 2 and s[i] == "0":
                 return False
         elif found_num:
             return False

@@ -3,7 +3,7 @@ import sys
 
 def main():
     # Check the command line arguments
-    check_command_line_args()
+    check_commang_line_agr()
 
     # Try to open the file and read lines
     try:

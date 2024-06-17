@@ -7,10 +7,11 @@ def main():
 
     # try to open the file
     try:
+        file = open(sys.argv[1], 'r')
 
 
     # if cant this means file isnot exist
-    except:
+    except FileNotFoundError
 
     #Loop through the lines and check if starts with # or whitespace
 

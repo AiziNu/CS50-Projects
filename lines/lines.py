@@ -17,7 +17,8 @@ def main():
 #Function to check the command line arg
 def check_commang_line_agr():
     #check how many elements in the command line
-    print(sys.argv)
+    if sys.argv < 2:
+        sys.exit("Too few command-line arguments")
 
     #check if its a Py file
 

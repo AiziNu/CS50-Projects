@@ -3,6 +3,7 @@ import sys
 
 def main():
     #check the command line
+    check_commang_line_agr()
 
     # try to open the file
 
@@ -16,6 +17,7 @@ def main():
 #Function to check the command line arg
 def check_commang_line_agr():
     #check how many elements in the command line
+    print(sys.argv)
 
     #check if its a Py file
 

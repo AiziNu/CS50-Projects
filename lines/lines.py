@@ -6,8 +6,11 @@ def main():
     check_commang_line_agr()
 
     # try to open the file
+    try:
+
 
     # if cant this means file isnot exist
+    except:
 
     #Loop through the lines and check if starts with # or whitespace
 
@@ -22,7 +25,8 @@ def check_commang_line_agr():
     elif sys.argv > 2:
         sys.exit("Too many command-line arguments")
     #check if its a Py file
-    if ".py" not in sys.argv[1]
+    if ".py" not in sys.argv[1]:
+        sys.exit("Not a Python file")
 
 if __name__ == "__main__":
     main()

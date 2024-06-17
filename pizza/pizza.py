@@ -37,4 +37,5 @@ def check_command_line_args():
     return filename
 
 if __name__ == "__main__":
-    main()
+    filename = check_command_line_args()
+    main(filename)

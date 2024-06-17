@@ -1,9 +1,9 @@
 import sys
-
+import os
 
 def main():
     # Check the command line arguments
-    check_commang_line_agr()
+    check_command_line_args()
 
     # Try to open the file and read lines
     try:
@@ -21,18 +21,15 @@ def main():
 
     print(loc)
 
-
-
-
-#Function to check the command line arg
-def check_commang_line_agr():
-    #check how many elements in the command line
-    if sys.argv < 2:
+# Function to check the command line arguments
+def check_command_line_args():
+    # Check the number of command line arguments
+    if len(sys.argv) < 2:
         sys.exit("Too few command-line arguments")
-    elif sys.argv > 2:
+    elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
-    #check if its a Py file
-    if ".py" not in sys.argv[1]:
+    # Check if the file has a .py extension
+    if not sys.argv[1].endswith(".py"):
         sys.exit("Not a Python file")
 
 if __name__ == "__main__":

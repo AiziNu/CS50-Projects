@@ -2,23 +2,24 @@ import sys
 
 
 def main():
-    #check the command line
-    check_commang_line_agr()
+    # Check the command line arguments
+    check_command_line_args()
 
-    # try to open the file
+    # Try to open the file and read lines
     try:
-        file = open(sys.argv[1], 'r')
-        lines = file.readlines()
-        print(lines)
-
-
-    # if cant this means file isnot exist
+        with open(sys.argv[1], 'r') as file:
+            lines = file.readlines()
     except FileNotFoundError:
-        sys.exit("File doesnot exist")
+        sys.exit("File does not exist")
 
-    #Loop through the lines and check if starts with # or whitespace
+    # Count lines of code excluding comments and blank lines
+    loc = 0
     for line in lines:
-        check
+        line = line.strip()
+        if line and not line.startswith("#"):
+            loc += 1
+
+    print(loc)
 
 
 

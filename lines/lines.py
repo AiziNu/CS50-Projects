@@ -1,0 +1,23 @@
+import sys
+
+
+def main():
+    #check the command line
+
+    # try to open the file
+
+    # if cant this means file isnot exist
+
+    #Loop through the lines and check if starts with # or whitespace
+
+
+
+
+#Function to check the command line arg
+def check_commang_line_agr():
+    #check how many elements in the command line
+
+    #check if its a Py file
+
+if __name__ == "__main__":
+    main()

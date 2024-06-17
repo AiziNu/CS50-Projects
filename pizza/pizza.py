@@ -18,7 +18,7 @@ def main(filename):
 
     except FileNotFoundError:
         print(f"File {filename} does not exist")
-        sys.exit()
+        sys.exit(1)
 
 
 

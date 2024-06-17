@@ -8,12 +8,17 @@ def main():
     # try to open the file
     try:
         file = open(sys.argv[1], 'r')
+        lines = file.readlines()
+        print(lines)
 
 
     # if cant this means file isnot exist
-    except FileNotFoundError
+    except FileNotFoundError:
+        sys.exit("File doesnot exist")
 
     #Loop through the lines and check if starts with # or whitespace
+    for line in lines:
+        check
 
 
 

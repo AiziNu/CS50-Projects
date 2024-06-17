@@ -3,7 +3,7 @@ import csv
 from tabulate import tabulate
 
 
-def main():
+def main(filename):
     #call if aour iptut pass all parameter
     check_command_line_args()
 

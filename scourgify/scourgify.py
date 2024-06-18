@@ -1,5 +1,6 @@
 def main():
-    #call check agument funct that it have 
+    #call check agument funct that it has to pass all condition
+    
 
 
 

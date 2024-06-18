@@ -1,5 +1,5 @@
 import sys
-import csv 
+import csv
 def main():
     #call check agument funct that it has to pass all condition
     input_file, output_file = check_command_line_args()
@@ -10,11 +10,11 @@ def main():
             reader = csv.DictReader(infile)
 
             #prepare the file for output CSV file
-            studets = []
+            students = []
             for row in reader:
                 last, first = row["name"].split(", ")
                 house = row["house"]
-                student.append({"first": first, "last": last, "house": house })
+                students.append({"first": first, "last": last, "house": house })
 
         #write the processed data to outout
         with open(output_file, mode='w') as outfile:

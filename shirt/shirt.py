@@ -50,7 +50,7 @@ def check_command_line_args():
 
     # Check if the input file exists
     if not os.path.isfile(input_file):
-        sys.exit(f"Input file '{input_file}' does not exist")
+        sys.exit("Input does not exist")
 
     return input_file, output_file
 

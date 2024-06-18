@@ -4,7 +4,33 @@ def main():
 
     #we use try catch if there anyy eroor will occur
     try:
-        with open(input_file, mode = 'r') as
+        with open(input_file, mode = 'r') as infile:
+            reader = csv.DictReader(infile)
+
+            #prepare the file for output CSV file
+            studets = []
+            for row in reader:
+                last, first = row["name"].split(", ")
+                house = row["house"]
+                student.append({"first": first, "last": last, "house": house })
+
+        #write the processed data to outout
+        with open(output_file, mode='w') as outfile:
+            fieldnames = ['first', 'last', 'house']
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for student in students:
+                writer.writerow(student)
+
+    except FileNotFoundError:
+        sys.exit(f"Could not read {input_file}")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 
 
 

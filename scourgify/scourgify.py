@@ -1,3 +1,5 @@
+import sys
+import csv 
 def main():
     #call check agument funct that it has to pass all condition
     input_file, output_file = check_command_line_args()
@@ -25,20 +27,6 @@ def main():
     except FileNotFoundError:
         sys.exit(f"Could not read {input_file}")
 
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
-
-
-
 
 def check_command_line_args():
     # Check the number of command line arguments
@@ -56,3 +44,6 @@ def check_command_line_args():
         sys.exit("Output file is not a CSV file")
 
     return input_filename, output_filename
+
+if __name__ == "__main__":
+    main()

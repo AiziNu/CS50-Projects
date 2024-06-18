@@ -4,7 +4,7 @@ def main():
     #call check agument funct that it has to pass all condition
     input_file, output_file = check_command_line_args()
 
-    #we use try catch if there anyy eroor will occur
+    #we use try and catch if there anyy eroor will occur
     try:
         with open(input_file, mode = 'r') as infile:
             reader = csv.DictReader(infile)

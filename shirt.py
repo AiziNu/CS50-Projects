@@ -3,6 +3,9 @@ import sys
 
 def main():
     #call our check arg funct that out agt needs to pass all conditions
+    input_filename, output_filename = check_command_line_args()
+    
+
 
 
 

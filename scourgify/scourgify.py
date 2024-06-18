@@ -1,6 +1,11 @@
 def main():
     #call check agument funct that it has to pass all condition
-    
+
+    #we use try catch if there anyy eroor will occur
+    try:
+        
+
+
 
 
 

@@ -1,13 +1,30 @@
 import sys
+import os
+from PIL import Image, ImageOps
 
 
 def main():
     #call our check arg funct that out agt needs to pass all conditions
-    input_filename, output_filename = check_command_line_args()
+    input_file, output_file = check_command_line_args()
 
+    try:
+        # Open the input image
+        input_image = Image.open(input_file)
 
+        # Open the shirt image
+        shirt_image = Image.open("shirt.png")
 
+        # Resize and crop the input image to match the size of the shirt image
+        fitted_image = ImageOps.fit(input_image, shirt_image.size, method=Image.LANCZOS, bleed=0.0, centering=(0.5, 0.5))
 
+        # Overlay the shirt image on the fitted input image
+        fitted_image.paste(shirt_image, (0, 0), shirt_image)
+
+        # Save the resulting image to the output file
+        fitted_image.save(output_file)
+
+    except Exception as e:
+        sys.exit(f"An error occurred: {e}")
 
 
 
@@ -32,4 +49,8 @@ def check_command_line_args():
     if not os.path.isfile(input_file):
         sys.exit(f"Input file '{input_file}' does not exist")
 
+    return input_file, output_file
 
+
+if __name__ == "__main__":
+    main()

@@ -3,7 +3,7 @@ def main():
 
     #we use try catch if there anyy eroor will occur
     try:
-        
+        with open("before.csv") as 
 
 
 

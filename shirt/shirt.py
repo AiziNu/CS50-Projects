@@ -35,11 +35,14 @@ def check_command_line_args():
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
 
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
     valid_extensions = ('.jpg', '.jpeg', '.png')
 
     # Check if both files have valid extensions
     if not input_file.lower().endswith(valid_extensions) or not output_file.lower().endswith(valid_extensions):
-        sys.exit("Input and output files must have a valid image extension (.jpg, .jpeg, .png)")
+        sys.exit("Invalid output.)")
 
     # Check if both files have the same extension
     if os.path.splitext(input_file)[1].lower() != os.path.splitext(output_file)[1].lower():

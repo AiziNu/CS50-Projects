@@ -1,8 +1,9 @@
 from numb3rs import validate
 
 def test_valid_addresses():
-    assert validate("192.168.0.1") == True
+    assert validate("127.0.0.1") == True
     assert validate("0.0.0.0") == True
+    assert validate("1.2.3.4") == True
 
 
 def test_invalid_addresses():

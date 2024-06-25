@@ -8,7 +8,7 @@ def main():
 
 def convert(s):
     #reg expression pattern
-    pattern = re.compile(r'^(?!0\d)\d{1,3}\.(?!0\d)\d{1,3}\.(?!0\d)\d{1,3}\.(?!0\d)\d{1,3}$')
+    pattern = re.compile(r'')
     matches = pattern.match(ip)
     if matches:
         #chech if its octet is between 0-255

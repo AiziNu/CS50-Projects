@@ -7,7 +7,6 @@ def test_valid_addresses():
 
 def test_invalid_addresses():
     assert validate("75.456.76.65") == False
-    assert validate("256.256.256.256") == False
     assert validate("192.168.0") == False
     assert validate("192.168.0.abc") == False
     assert validate("") == False

@@ -1,8 +1,8 @@
 import re
-import sys
 
 def main():
-    print(convert(input("Hours: ")))
+    user_input = input("Hours: ")
+    print(convert(user_input))
 
 def convert(s):
     # Regular expression pattern to match the input format with proper spacing
@@ -47,5 +47,6 @@ def to_24_hour_format(hour, minute, period):
 
 if __name__ == "__main__":
     main()
+
 
 

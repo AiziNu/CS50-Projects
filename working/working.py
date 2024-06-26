@@ -42,6 +42,8 @@ def to_24_hour_format(hour, minute, period):
     elif period == "PM":
         if hour != 12:
             hour += 12
+    else:
+        raise ValueError("Invalid period")  # Add this line to handle invalid period
 
     return f"{hour:02}:{minute:02}"
 

@@ -13,9 +13,15 @@ def convert(s):
 
     start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
-    # Ensure both times have consistent formatting
-    if (start_minute is None and ':' in s) or (end_minute is None and ':' in s):
+    # Ensure minutes are present if a colon is present
+    if (':' in s) and (start_minute is None or end_minute is None):
         raise ValueError("Invalid format")
+
+    # Default minutes to "00" if they are not provided
+    if start_minute is None:
+        start_minute = "00"
+    if end_minute is None:
+        end_minute = "00"
 
     # Validate and convert times
     start_time_24 = to_24_hour_format(start_hour, start_minute, start_period)

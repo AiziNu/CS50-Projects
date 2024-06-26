@@ -1,14 +1,12 @@
 import re
 import sys
 
-
 def main():
     print(convert(input("Hours: ")))
 
-
 def convert(s):
-    #reg expression pattern
-    pattern = re.compile(r'^\s*(\d{1,2}):?(\d{2})?\s*(AM|PM)\s*to\s*(\d{1,2}):?(\d{2})?\s*(AM|PM)\s$')
+    # Regular expression pattern to match the input format
+    pattern = re.compile(r'^\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*to\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*$')
     match = pattern.match(s)
     if not match:
         raise ValueError("Invalid format")
@@ -36,5 +34,6 @@ def to_24_hour_format(hour, minute, period):
             hour += 12
 
     return f"{hour:02}:{minute:02}"
+
 if __name__ == "__main__":
     main()

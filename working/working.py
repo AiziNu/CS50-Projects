@@ -13,6 +13,10 @@ def convert(s):
 
     start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
+    # Ensure both times have consistent formatting
+    if (start_minute is None and ':' in s) or (end_minute is None and ':' in s):
+        raise ValueError("Invalid format")
+
     # Validate and convert times
     start_time_24 = to_24_hour_format(start_hour, start_minute, start_period)
     end_time_24 = to_24_hour_format(end_hour, end_minute, end_period)
@@ -32,8 +36,9 @@ def to_24_hour_format(hour, minute, period):
     elif period == "PM":
         if hour != 12:
             hour += 12
-    
+
     return f"{hour:02}:{minute:02}"
 
 if __name__ == "__main__":
     main()
+

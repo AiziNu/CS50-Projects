@@ -31,7 +31,10 @@ def convert(s):
 
 def to_24_hour_format(hour, minute, period):
     hour = int(hour)
-    minute = int(minute) if minute else 0
+    if minute:
+        minute = int(minute)
+    else:
+        raise ValueError("Minutes must be provided")
 
     if not (1 <= hour <= 12 and 0 <= minute < 60):
         raise ValueError("Invalid time")
@@ -43,10 +46,9 @@ def to_24_hour_format(hour, minute, period):
         if hour != 12:
             hour += 12
     else:
-        raise ValueError("Invalid period")  # Add this line to handle invalid period
+        raise ValueError("Invalid period")
 
     return f"{hour:02}:{minute:02}"
-
 if __name__ == "__main__":
     main()
 

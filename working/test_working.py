@@ -18,6 +18,8 @@ def test_invalid_times():
     with pytest.raises(ValueError):
         convert("9 AM to 5")
     with pytest.raises(ValueError):
+        convert("9AM to 5PM")
+    with pytest.raises(ValueError):
         convert("random text")
 
 if __name__ == "__main__":

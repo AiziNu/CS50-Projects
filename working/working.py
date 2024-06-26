@@ -33,7 +33,7 @@ def to_24_hour_format(hour, minute, period):
     hour = int(hour)
     minute = int(minute)
 
-    if not (1 <= hour <= 12 and 0 <= minute < 60):
+    if not (1 <= hour <= 12 or 0 <= minute < 60):
         raise ValueError("Invalid time")
 
     if period == "AM":

@@ -1,14 +1,14 @@
-import re
-import sys
+import validators
 
 def main():
-    print(count(input("Text: ")))
+    email = input("Email: ")
+    if is_valid_email(email):
+        print("Valid")
+    else:
+        print("Invalid")
 
-def count(s):
-    # Use a regular expression to match "um" as a standalone word
-    pattern = r'\bum\b'
-    matches = re.findall(pattern, s, re.IGNORECASE)
-    return len(matches)
+def is_valid_email(email):
+    return validators.email(email)
 
 if __name__ == "__main__":
     main()

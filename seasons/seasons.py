@@ -22,7 +22,7 @@ def minutes_lived(year,month, day):
     tday = date.today()
     differ= tday - dt
     minutes = int(differ.total_seconds() / 60)
-    msg = p.number_to_words(minutes)
+    msg = p.number_to_words(minutes, andword="") + " minutes"
     print(msg)
 
 

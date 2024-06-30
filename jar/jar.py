@@ -21,7 +21,7 @@ class Jar:
     def withdraw(self, n):
         if not isinstance(n, int) or n < 0:
             raise ValueError('Number of cookies withdraw must be non-negative int')
-        if self._cookies < n:
+        if self._cookies - n < 0:
             raise ValueError("Not enough cookies in the jar")
         self._cookies -= n
 

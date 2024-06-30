@@ -19,7 +19,8 @@ def minutes_lived(year,month, day):
         return "Invalid date"
     tday = date.today()
     differ= tday - dt
-    print(differ)
+    minutes = int(differ.total_seconds() / 60)
+    print(minutes)
 
 
 

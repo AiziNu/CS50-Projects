@@ -14,7 +14,7 @@ def main():
 
 
 
-def minutes_lived(year,month, day):
+def minutes_lived(year, month, day):
     try:
         dt = date(int(year), int(month), int(day))
     except ValueError():

@@ -23,7 +23,7 @@ def minutes_lived(year,month, day):
     differ= tday - dt
     minutes = int(differ.total_seconds() / 60)
     msg = p.number_to_words(minutes, andword="") + " minutes"
-    return msg
+    return msg.capitalize()
 
 
 

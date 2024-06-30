@@ -1,14 +1,14 @@
 import pytest
-from datetime import date
-from seasons import calculate_age_in_minutes
+from seasons import minutes_lived
 
-def test_calculate_age_in_minutes():
-    assert calculate_age_in_minutes(date(2000, 1, 1), date(2001, 1, 1)) == 366 * 24 * 60  # Includes a leap year
-    assert calculate_age_in_minutes(date(2020, 1, 1), date(2021, 1, 1)) == 366 * 24 * 60  # Leap year check
-    assert calculate_age_in_minutes(date(2021, 1, 1), date(2022, 1, 1)) == 365 * 24 * 60  # Non-leap year check
-    assert minutes_to_words(525600) == "five hundred twenty five thousand six hundred"
-    assert minutes_to_words(527040) == "five hundred twenty seven thousand forty"  # for a leap year
-    assert minutes_to_words(527041) == "five hundred twenty seven thousand forty one"
+
+def main():
+    test_1()
+    test_2()
+
+def test_1():
+    assert  minutes_lived(1997-03-05) == "Fourteen million, three hundred sixty-nine thousand, seven hundred sixty minutes"
+    assert  minutes_lived(1997-03-05) == "Fourteen million, three hundred sixty-nine thousand, seven hundred sixty minutes"
 
 # Running the tests
 if __name__ == "__main__":

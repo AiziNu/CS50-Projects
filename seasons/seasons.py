@@ -16,7 +16,7 @@ def main():
         # Convert age to English words
         # You can use the 'inflect' library for this, as mentioned in the hints
 
-        print(f"You are approximately {age_in_minutes} minutes old.")
+        print(age_in_minutes)
     except ValueError:
         print("Invalid date format. Please enter a valid date in YYYY-MM-DD format.")
 

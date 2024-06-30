@@ -1,34 +1,26 @@
 from fpdf import FPDF
 
-class Shirtificate(FPDF):
-    def __init__(self, name):
-        super().__init__(orientation="P", unit="mm", format="A4")
-        self.name = name
+class PDF(FPDF):
+    def header(self):
+        self.set_font("Arial", "B", 24)
+        self.cell(0, 10, "CS50 Shirtificate", 0, 1, "C")
 
-    def create_shirtificate(self):
-        # Set font and size
-        self.set_font("Helvetica", "", 30)
-        self.set_text_color(0, 0, 0)
+    def add_shirtificate(self, name):
+        # Add the image to the PDF
+        self.image("shirtificate.png", x=0, y=60, w=210)
 
-        # Add "CS50 Shirtificate" text centered horizontally
-        self.cell(0, 50, "CS50 Shirtificate", align="C", ln=True)
-
-        # Add the shirt image centered horizontally
-        self.image("shirtificate.png", x=0, y=45, w=self.w)
-
-        # Add the user's name on top of the shirt in white text
-        self.set_font("Helvetica", "", 20)
+        # Add the name text
+        self.set_xy(0, 140)
+        self.set_font("Arial", "B", 36)
         self.set_text_color(255, 255, 255)
-        self.text(x=55, y=125, txt=f"{self.name} took CS50")
-
-        # Save the PDF
-        self.output("shirtificate.pdf")
+        self.cell(210, 10, f"{name} took CS50", 0, 1, "C")
 
 def main():
-    name = input("Enter your name: ")
-    shirtificate = Shirtificate(name)
-    shirtificate.create_shirtificate()
-    print("Shirtificate created successfully!")
+    name = input("Name: ")
+    pdf = PDF()
+    pdf.add_page()
+    pdf.add_shirtificate(name)
+    pdf.output("shirtificate.pdf")
 
 if __name__ == "__main__":
     main()

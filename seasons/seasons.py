@@ -1,9 +1,13 @@
 from datetime import date
+import sys
 
 
 def main():
-    year, month, day = input("Date of birth: ").split("-")
-    ...
+    try:
+        year, month, day = input("Date of birth: ").split("-")
+    except ValueError():
+        sys.exit("Invalid date")
+
 
 
 def minutes_lived(year,month, day)

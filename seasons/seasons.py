@@ -8,9 +8,12 @@ def main():
     except ValueError():
         sys.exit("Invalid date")
 
+    print(minutes_lived(year, month, day))
 
 
-def minutes_lived(year,month, day)
+
+def minutes_lived(year,month, day):
+    
 
 
 if __name__ == "__main__":

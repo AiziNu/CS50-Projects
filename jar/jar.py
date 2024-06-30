@@ -2,7 +2,7 @@
 
 class Jar:
     def __init__(self, capacity=12):
-        if not isinstance(n,int) or capacity < 0:
+        if not isinstance(capasity,int) or capacity < 0:
             raise ValueError("Capacity must be non-negative int")
         self._capacity = capacity
         self._cookies = 0
@@ -23,7 +23,7 @@ class Jar:
             raise ValueError('Number of cookies withdraw must be non-negative int')
         if self._cookies < n:
             raise ValueError("Not enough cookies in the jar")
-        self.cookies -=
+        self._cookies -= n
 
     @property
     def capacity(self):

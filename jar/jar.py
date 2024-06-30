@@ -11,7 +11,9 @@ class Jar:
         return "🍪" * self._cookies
 
     def deposit(self, n):
-        if 
+        if not isinstance(n,int) or n< 0:
+            raise ValueError('Number of cookies must be non-negative int')
+        
 
 
     def withdraw(self, n):

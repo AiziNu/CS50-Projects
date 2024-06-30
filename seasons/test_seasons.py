@@ -8,7 +8,11 @@ def main():
 
 def test_1():
     assert  minutes_lived(1997-03-05) == "Fourteen million, three hundred sixty-nine thousand, seven hundred sixty minutes"
-    assert  minutes_lived(1997-03-05) == "Fourteen million, three hundred sixty-nine thousand, seven hundred sixty minutes"
+    assert  minutes_lived(1983-11-11) == "Twenty-one million, three hundred seventy-two thousand, four hundred eighty minutes"
+
+def test_2():
+    assert  minutes_lived(19-03-1989) == "Invalid date"
+
 
 # Running the tests
 if __name__ == "__main__":

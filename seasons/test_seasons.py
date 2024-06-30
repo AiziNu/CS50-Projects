@@ -1,4 +1,4 @@
-from seasons import calculate_minutes_since_birth
+from seasons import calculate_age_in_minutes
 from datetime import date
 
 def test_calculate_minutes_since_birth():

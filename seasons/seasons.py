@@ -13,8 +13,14 @@ def main():
 
 
 def minutes_lived(year,month, day):
-    dt = date(int(year), int(month), int(day))
-    
+    try:
+        dt = date(int(year), int(month), int(day))
+    except ValueError():
+        return "Invalid date"
+    tday = date.today()
+    differ= tday - dt
+    print(differ)
+
 
 
 if __name__ == "__main__":

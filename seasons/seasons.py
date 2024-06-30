@@ -13,7 +13,7 @@ def main():
 
 
 def minutes_lived(year,month, day):
-    
+    dt = date()
 
 
 if __name__ == "__main__":

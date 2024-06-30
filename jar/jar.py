@@ -13,16 +13,22 @@ class Jar:
     def deposit(self, n):
         if not isinstance(n,int) or n< 0:
             raise ValueError('Number of cookies must be non-negative int')
-        if 
+        if self._cookies + n > self._capacity:
+            raise ValueError("Exceeds cookie jar")
+        self._cookies += n
 
 
     def withdraw(self, n):
-        ...
+        if not isinstance(n, int) or n< 0:
+            raise ValueError('Number of cookies withdraw must be non-negative int')
+        if self._cookies < n:
+            raise ValueError("Not enough cookies in the jar")
+        self.cookies -=
 
     @property
     def capacity(self):
-        ...
+        return self._capacity
 
     @property
     def size(self):
-        ...
+        return self._cookies

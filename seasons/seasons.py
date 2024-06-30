@@ -23,7 +23,7 @@ def main():
         print("Invalid date format. Please use YYYY-MM-DD.")
         sys.exit(1)
     age_in_words = format_minutes_in_words(age_in_minutes)
-    print(f"You are approximately {age_in_words} minutes old!")
+    print(age_in_words)
 
 if __name__ == "__main__":
     main()

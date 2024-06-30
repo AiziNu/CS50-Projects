@@ -1,25 +1,24 @@
-from datetime import date, datetime
-import inflect
-import sys
+from datetime import date
+
+def calculate_age_in_minutes(birth_date):
+    today = date.today()
+    age = today - birth_date
+    age_in_minutes = age.days * 24 * 60
+    return age_in_minutes
 
 def main():
-    dob_str = input("Date of Birth (YYYY-MM-DD): ")
     try:
-        birth_date = datetime.strptime(dob_str, "%Y-%m-%d").date()
+        user_input = input("Enter your date of birth (YYYY-MM-DD): ")
+        year, month, day = map(int, user_input.split("-"))
+        birth_date = date(year, month, day)
+        age_in_minutes = calculate_age_in_minutes(birth_date)
+
+        # Convert age to English words
+        # You can use the 'inflect' library for this, as mentioned in the hints
+
+        print(f"You are approximately {age_in_minutes} minutes old.")
     except ValueError:
-        sys.exit("Invalid date format")
-
-    today = date.today()
-    age_in_minutes = calculate_age_in_minutes(birth_date, today)
-    print(minutes_to_words(age_in_minutes))
-
-def calculate_age_in_minutes(birth_date, today):
-    delta = today - birth_date
-    return delta.days * 24 * 60
-
-def minutes_to_words(minutes):
-    p = inflect.engine()
-    return p.number_to_words(minutes, andword="").replace(",", "").replace("-", " ")
+        print("Invalid date format. Please enter a valid date in YYYY-MM-DD format.")
 
 if __name__ == "__main__":
     main()

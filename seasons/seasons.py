@@ -7,7 +7,7 @@ p = inflect.engine()
 def main():
     try:
         year, month, day = input("Date of birth: ").split("-")
-    except ValueError():
+    except ValueError:
         sys.exit("Invalid date")
 
     print(minutes_lived(year, month, day))
@@ -17,7 +17,7 @@ def main():
 def minutes_lived(year, month, day):
     try:
         dt = date(int(year), int(month), int(day))
-    except ValueError():
+    except ValueError:
         return "Invalid date"
     tday = date.today()
     differ= tday - dt

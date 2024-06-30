@@ -1,16 +1,23 @@
+from seasons import calculate_minutes_since_birth
 from datetime import date
-from seasons import calculate_age_in_minutes, convert_number_to_words
 
-def test_calculate_age_in_minutes():
-    assert calculate_age_in_minutes(date(2000, 1, 1), date(2020, 1, 1)) == 10540800
-    assert calculate_age_in_minutes(date(2023, 6, 24), date(2024, 6, 24)) == 527040
-    assert calculate_age_in_minutes(date(2023, 2, 28), date(2023, 3, 1)) == 1440
+def test_calculate_minutes_since_birth():
+    # Test for a date with known difference
+    birth_date = date(2000, 1, 1)
+    today_date = date(2023, 1, 1)
+    delta = today_date - birth_date
+    expected_minutes = delta.days * 24 * 60
+    assert calculate_minutes_since_birth(birth_date) == expected_minutes
 
-def test_convert_number_to_words():
-    assert convert_number_to_words(10540800) == "ten million five hundred forty thousand eight hundred minutes"
-    assert convert_number_to_words(527040) == "five hundred twenty-seven thousand forty minutes"
-    assert convert_number_to_words(1440) == "one thousand four hundred forty minutes"
+def test_calculate_minutes_since_birth_with_leap_year():
+    # Test for a date range that includes a leap year
+    birth_date = date(2020, 1, 1)
+    today_date = date(2023, 1, 1)
+    delta = today_date - birth_date
+    expected_minutes = delta.days * 24 * 60
+    assert calculate_minutes_since_birth(birth_date) == expected_minutes
 
 if __name__ == "__main__":
-    import pytest
-    pytest.main()
+    test_calculate_minutes_since_birth()
+    test_calculate_minutes_since_birth_with_leap_year()
+    print("All tests passed!")

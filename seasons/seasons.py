@@ -1,6 +1,8 @@
 from datetime import date
+import inflect
 import sys
 
+p = inflect.engine()
 
 def main():
     try:
@@ -20,7 +22,8 @@ def minutes_lived(year,month, day):
     tday = date.today()
     differ= tday - dt
     minutes = int(differ.total_seconds() / 60)
-    print(minutes)
+    msg = p.number_to_words(minutes)
+    print(msg)
 
 
 

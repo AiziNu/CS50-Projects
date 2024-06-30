@@ -8,12 +8,13 @@ def main():
     except ValueError():
         sys.exit("Invalid date")
 
-    print(minutes_lived(year, month, day))
+    minutes_lived(year, month, day)
 
 
 
 def minutes_lived(year,month, day):
     dt = date(int(year), int(month), int(day))
+    print(dt)
 
 
 if __name__ == "__main__":

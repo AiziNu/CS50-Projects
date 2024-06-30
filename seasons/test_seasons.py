@@ -1,23 +1,17 @@
-from seasons import calculate_age_in_minutes
-from datetime import date
+import pytest
+from datetime import date, datetime
+from seasons import calculate_age_in_minutes, format_minutes_in_words
 
-def test_calculate_minutes_since_birth():
-    # Test for a date with known difference
-    birth_date = date(2000, 1, 1)
-    today_date = date(2023, 1, 1)
-    delta = today_date - birth_date
-    expected_minutes = delta.days * 24 * 60
-    assert calculate_minutes_since_birth(birth_date) == expected_minutes
+def test_calculate_age_in_minutes():
+    assert calculate_age_in_minutes("2000-01-01") == (datetime.combine(date.today(), datetime.min.time()) - datetime(2000, 1, 1)).total_seconds() // 60
 
-def test_calculate_minutes_since_birth_with_leap_year():
-    # Test for a date range that includes a leap year
-    birth_date = date(2020, 1, 1)
-    today_date = date(2023, 1, 1)
-    delta = today_date - birth_date
-    expected_minutes = delta.days * 24 * 60
-    assert calculate_minutes_since_birth(birth_date) == expected_minutes
+def test_calculate_age_in_minutes_invalid_format():
+    assert calculate_age_in_minutes("01-01-2000") is None
+    assert calculate_age_in_minutes("2000/01/01") is None
+
+def test_format_minutes_in_words():
+    assert format_minutes_in_words(525600) == "five hundred twenty five thousand six hundred"
+    assert format_minutes_in_words(1051200) == "one million fifty one thousand two hundred"
 
 if __name__ == "__main__":
-    test_calculate_minutes_since_birth()
-    test_calculate_minutes_since_birth_with_leap_year()
-    print("All tests passed!")
+    pytest.main()

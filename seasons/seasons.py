@@ -14,7 +14,7 @@ def calculate_age_in_minutes(birth_date):
 
 def format_minutes_in_words(minutes):
     p = inflect.engine()
-    return p.number_to_words(minutes, andword="").replace(",", "")
+    return p.number_to_words(minutes, andword="").replace(",", "").replace("-", " ")
 
 def main():
     user_input = input("Enter your date of birth (YYYY-MM-DD): ")
@@ -27,3 +27,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

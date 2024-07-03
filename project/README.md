@@ -74,11 +74,5 @@ The Deposit Calculator is a Python-based application that allows users to manage
 - `test_show_transaction_history()`: Tests the `show_transaction_history` function.
 - `test_calculate_interest()`: Tests the `calculate_interest` function.
 
-## Requirements
 
-- Python 3.x
-- pytest
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.

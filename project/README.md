@@ -4,6 +4,8 @@
 
 The Deposit Calculator is a Python-based application that allows users to manage their financial transactions. Users can register an account, log in, deposit funds, withdraw funds, check their balance, view transaction history, and calculate interest on their balance over a specified period. This project serves as a final project for CS50, demonstrating the use of multiple functions, user interaction, and unit testing with pytest.
 
+Video Link to project URL: https://www.youtube.com/watch?v=PZPEpD-69Ck
+
 ## Features
 
 - **User Registration and Login**: Register new users and allow existing users to log in.

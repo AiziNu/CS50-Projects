@@ -1,56 +1,53 @@
 import re
+import sys
 
 def main():
-    user_input = input("Hours: ")
-    print(convert(user_input))
+    print(convert(input("Hours: ")))
 
 def convert(s):
-    # Regular expression pattern to match the input format with proper spacing
-    pattern = re.compile(r'^\s*(\d{1,2})(:(\d{2}))?\s*(AM|PM)\s*to\s*(\d{1,2})(:(\d{2}))?\s*(AM|PM)\s*$')
-    match = pattern.match(s)
+    # Define a regex pattern to match the time formats
+    pattern = r"^(\d{1,2}):?(\d{2})? (AM|PM) to (\d{1,2}):?(\d{2})? (AM|PM)$"
+
+    # Search for the pattern in the input string
+    match = re.search(pattern, s)
     if not match:
-        raise ValueError("Invalid format")
+        raise ValueError("Invalid time format")
 
-    start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.group(1), match.group(3), match.group(4), match.group(5), match.group(7), match.group(8)
+    start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
-    # Ensure minutes are present if colons are present
-    if (match.group(2) and not start_minute) or (match.group(6) and not end_minute):
-        raise ValueError("Invalid format")
+    # Set default minutes to '00' if not provided
+    start_minute = start_minute if start_minute else '00'
+    end_minute = end_minute if end_minute else '00'
 
-    # Default minutes to "00" if they are not provided
-    if start_minute is None:
-        start_minute = "00"
-    if end_minute is None:
-        end_minute = "00"
+    # Validate hours and minutes
+    if not (0 <= int(start_hour) <= 12 and 0 <= int(start_minute) < 60):
+        raise ValueError("Invalid start time")
+    if not (0 <= int(end_hour) <= 12 and 0 <= int(end_minute) < 60):
+        raise ValueError("Invalid end time")
 
-    # Validate and convert times
-    start_time_24 = to_24_hour_format(start_hour, start_minute, start_period)
-    end_time_24 = to_24_hour_format(end_hour, end_minute, end_period)
+    # Convert start time to 24-hour format
+    start_hour = int(start_hour)
+    if start_period == "PM" and start_hour != 12:
+        start_hour += 12
+    elif start_period == "AM" and start_hour == 12:
+        start_hour = 0
 
-    return f"{start_time_24} to {end_time_24}"
+    # Convert end time to 24-hour format
+    end_hour = int(end_hour)
+    if end_period == "PM" and end_hour != 12:
+        end_hour += 12
+    elif end_period == "AM" and end_hour == 12:
+        end_hour = 0
 
-def to_24_hour_format(hour, minute, period):
-    hour = int(hour)
-    if minute:
-        minute = int(minute)
-    else:
-        raise ValueError("Minutes must be provided")
+    # Format the times to 24-hour format
+    start_time = f"{start_hour:02}:{start_minute}"
+    end_time = f"{end_hour:02}:{end_minute}"
 
-    if not (1 <= hour <= 12 and 0 <= minute < 60):
-        raise ValueError("Invalid time")
+    return f"{start_time} to {end_time}"
 
-    if period == "AM":
-        if hour == 12:
-            hour = 0
-    elif period == "PM":
-        if hour != 12:
-            hour += 12
-    else:
-        raise ValueError("Invalid period")
-
-    return f"{hour:02}:{minute:02}"
 if __name__ == "__main__":
     main()
+
 
 
 

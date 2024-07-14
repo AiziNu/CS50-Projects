@@ -12,7 +12,7 @@ Introduction to fundamental concepts in computer science, including algorithms, 
 
 🥇 **Certificate:**
 - [Certificate Link](https://certificates.cs50.io/662ff1d3-1a9e-4164-9aac-15f9af3e5e0c.pdf?size=letter)
-- <img src="https://github.com/user-attachments/assets/1e91500d-099c-4f72-bc12-2ffa4231d38c" width=60% height=60%>
+ <img src="https://github.com/user-attachments/assets/1e91500d-099c-4f72-bc12-2ffa4231d38c" width=60% height=60%>
 
 
 📙 **Introduction to Python**
@@ -27,7 +27,8 @@ In-depth exploration of Python programming language, covering data types, contro
 
 🥇 **Certificate:**
 - [Certificate Link](https://certificates.cs50.io/284208cc-3d0c-4d3f-9196-3df031859979.pdf?size=letter)
-- <img src="https://github.com/user-attachments/files/16228110/CS50PY.pdf" width=60% height=60%>
+- <img src="https://github.com/user-attachments/assets/73b79ad5-7009-4dec-a6c7-7e0e3d1333bb" width=60% height=60%>
+
 
 📘 **Web Development**
 

@@ -12,6 +12,7 @@ Introduction to fundamental concepts in computer science, including algorithms, 
 
 🥇 **Certificate:**
 - [Certificate Link](https://certificates.cs50.io/662ff1d3-1a9e-4164-9aac-15f9af3e5e0c.pdf?size=letter)
+- <img src="https://certificates.cs50.io/662ff1d3-1a9e-4164-9aac-15f9af3e5e0c.pdf?size=letter" width=60% height=60%>
 
 📙 **Introduction to Python**
 
